@@ -1368,7 +1368,7 @@ if (DARWIN)
 
   # Add resource files to the project.
   set(viewer_RESOURCE_FILES
-    secondlife.icns
+    SceneGate.icns
     macview.r
     Info-SecondLife.plist
     SecondLife.xib/
@@ -1444,7 +1444,7 @@ if (WINDOWS)
     message(STATUS "Copying icons for ${ICON_PATH}")
     execute_process(
       COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "${CMAKE_CURRENT_SOURCE_DIR}/icons/${ICON_PATH}/secondlife.ico"
+        "${CMAKE_CURRENT_SOURCE_DIR}/icons/${ICON_PATH}/SceneGate.ico"
         "${CMAKE_CURRENT_SOURCE_DIR}/res/ll_icon.ico"
       )
     execute_process(
@@ -2056,7 +2056,7 @@ if (DARWIN)
   # this is the setting for the Python wrapper, see SL-322 and WRAPPER line in Info-SecondLife.plist
   set(MACOSX_WRAPPER_EXECUTABLE_NAME "SL_Launcher")
   set(MACOSX_BUNDLE_INFO_STRING "Second Life Viewer")
-  set(MACOSX_BUNDLE_ICON_FILE "secondlife.icns")
+  set(MACOSX_BUNDLE_ICON_FILE "SceneGate.icns")
   set(MACOSX_BUNDLE_GUI_IDENTIFIER "com.secondlife.indra.viewer")
   set(MACOSX_BUNDLE_LONG_VERSION_STRING "${VIEWER_CHANNEL} ${VIEWER_SHORT_VERSION}.${VIEWER_VERSION_REVISION}")
   set(MACOSX_BUNDLE_BUNDLE_NAME "SecondLife")

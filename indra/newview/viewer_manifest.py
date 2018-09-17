@@ -266,7 +266,7 @@ class ViewerManifest(LLManifest):
         return ''.join(self.app_name().split())
     
     def icon_path(self):
-        return "icons/" + self.channel_type()
+        return "icons/"
 
     def extract_names(self,src):
         try:
@@ -496,7 +496,7 @@ class WindowsManifest(ViewerManifest):
                 self.path("InstallerUserMessage.py")
 
             with self.prefix(src=self.icon_path(), dst="vmp_icons"):
-                self.path("secondlife.ico")
+                self.path("SceneGate.ico")
 
             #VMP  Tkinter icons
             with self.prefix("vmp_icons"):
@@ -883,9 +883,9 @@ class DarwinManifest(ViewerManifest):
         # applications for the VMP and for the actual viewer, respectively.
         # These names, without the .app suffix, determine the flyover text for
         # their corresponding Dock icons.
-        toplevel_app, toplevel_icon = "Second Life.app",          "secondlife.icns"
-        launcher_app, launcher_icon = "Second Life Launcher.app", "secondlife.icns"
-        viewer_app,   viewer_icon   = "Second Life Viewer.app",   "secondlife.icns"
+        toplevel_app, toplevel_icon = "Second Life.app",          "SceneGate.icns"
+        launcher_app, launcher_icon = "Second Life Launcher.app", "SceneGate.icns"
+        viewer_app,   viewer_icon   = "Second Life Viewer.app",   "SceneGate.icns"
 
         # copy over the build result (this is a no-op if run within the xcode script)
         self.path(os.path.join(self.args['configuration'], toplevel_app), dst="")
@@ -975,7 +975,7 @@ open "%s" --args "$@"
                         with self.prefix(src=self.icon_path(), dst="") :
                             self.path(launcher_icon)
                             with self.prefix(dst="vmp_icons"):
-                                self.path("secondlife.ico")
+                                self.path("SceneGate.ico")
                         #VMP Tkinter icons
                         with self.prefix("vmp_icons"):
                             self.path("*.png")
