@@ -5,8 +5,8 @@
 # with the version specified
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
-set(ROOT_PROJECT_NAME "Alchemy" CACHE STRING
-    "The root project/makefile/solution name. Defaults to Alchemy.")
+set(ROOT_PROJECT_NAME "SceneGate" CACHE STRING
+    "The root project/makefile/solution name. Defaults to SceneGate.")
 project(${ROOT_PROJECT_NAME})
 
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")

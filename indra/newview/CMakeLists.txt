@@ -1476,7 +1476,7 @@ if (DARWIN)
 
   # Add resource files to the project.
   set(viewer_RESOURCE_FILES
-    alchemy.icns
+    SceneGate.icns
     Info-Alchemy.plist
     Alchemy.xib
     # CMake doesn't seem to support Xcode language variants well just yet
@@ -1537,33 +1537,29 @@ if (WINDOWS)
 
     # Replace the icons with the appropriate ones for the channel
     # ('test' is the default)
-    set(ICON_PATH "test")
     set(VIEWER_MACOSX_PHASE "d")
     string(TOLOWER ${VIEWER_CHANNEL} channel_lower)
-    if(channel_lower MATCHES "^alchemy release")
-        set(ICON_PATH "release")
+    if(channel_lower MATCHES "^scenegate release")
         set(VIEWER_MACOSX_PHASE "f")
-    elseif(channel_lower MATCHES "^alchemy beta")
-        set(ICON_PATH "beta")
+    elseif(channel_lower MATCHES "^scenegate beta")
         set(VIEWER_MACOSX_PHASE "b")
-    elseif(channel_lower MATCHES "^alchemy project")
-        set(ICON_PATH "project")
+    elseif(channel_lower MATCHES "^scenegate project")
         set(VIEWER_MACOSX_PHASE "a")
     endif()
-    message("Copying icons for ${ICON_PATH}")
+    message("Copying icons")
     execute_process(
       COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "${CMAKE_CURRENT_SOURCE_DIR}/icons/${ICON_PATH}/alchemy.ico"
+        "${CMAKE_CURRENT_SOURCE_DIR}/icons/SceneGate.ico"
         "${CMAKE_CURRENT_SOURCE_DIR}/res/ll_icon.ico"
       )
     execute_process(
       COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "${CMAKE_CURRENT_SOURCE_DIR}/icons/${ICON_PATH}/alchemy_256.BMP"
+        "${CMAKE_CURRENT_SOURCE_DIR}/icons/SceneGate_256.BMP"
         "${CMAKE_CURRENT_SOURCE_DIR}/res/ll_icon.BMP"
       )
     execute_process(
       COMMAND ${CMAKE_COMMAND} -E copy_if_different
-        "${CMAKE_CURRENT_SOURCE_DIR}/icons/${ICON_PATH}/alchemy_256.BMP"
+        "${CMAKE_CURRENT_SOURCE_DIR}/icons/SceneGate_256.BMP"
         "${CMAKE_CURRENT_SOURCE_DIR}/res-sdl/ll_icon.BMP"
       )
 
@@ -2168,7 +2164,7 @@ if (DARWIN)
   # These all get set with PROPERTIES
   set(product "Alchemy")
   set(MACOSX_BUNDLE_INFO_STRING "Alchemy Viewer")
-  set(MACOSX_BUNDLE_ICON_FILE "alchemy.icns")
+  set(MACOSX_BUNDLE_ICON_FILE "SceneGate.icns")
   set(MACOSX_BUNDLE_GUI_IDENTIFIER "org.alchemyviewer.viewer")
   set(MACOSX_BUNDLE_LONG_VERSION_STRING "${VIEWER_CHANNEL} ${VIEWER_SHORT_VERSION}.${VIEWER_VERSION_REVISION}")
   set(MACOSX_BUNDLE_BUNDLE_NAME "Alchemy")

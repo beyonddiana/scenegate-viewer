@@ -726,7 +726,7 @@ class DarwinManifest(ViewerManifest):
 
                 icon_path = self.icon_path()
                 if self.prefix(src=icon_path, dst="") :
-                    self.path("alchemy.icns")
+                    self.path("SceneGate.icns")
                     self.end_prefix(icon_path)
 
                 self.path("Alchemy.nib")
@@ -1128,9 +1128,9 @@ class LinuxManifest(ViewerManifest):
         icon_path = self.icon_path()
         print "DEBUG: icon_path '%s'" % icon_path
         if self.prefix(src=icon_path, dst="") :
-            self.path("alchemy_256.png","alchemy_icon.png")
+            self.path("SceneGate_256.png","SceneGate_icon.png")
             if self.prefix(src="",dst="res-sdl") :
-                self.path("alchemy_256.BMP","ll_icon.BMP")
+                self.path("SceneGate_256.BMP","ll_icon.BMP")
                 self.end_prefix("res-sdl")
             self.end_prefix(icon_path)
 
