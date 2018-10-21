@@ -92,10 +92,10 @@
 ;Version Information
 
   VIProductVersion "${VERSION_LONG}"
-  VIAddVersionKey "ProductName" "Alchemy Viewer"
-  VIAddVersionKey "Comments" "A viewer for the meta-verse!"
-  VIAddVersionKey "CompanyName" "Alchemy Viewer Project"
-  VIAddVersionKey "LegalCopyright" "Copyright © 2013-2015, Alchemy Viewer Project"
+  VIAddVersionKey "ProductName" "SceneGate Viewer"
+  VIAddVersionKey "Comments" ""
+  VIAddVersionKey "CompanyName" "Infinite Metaverse Alliance"
+  VIAddVersionKey "LegalCopyright" "Copyright © 2018, Infinite Metaverse Alliance"
   VIAddVersionKey "FileDescription" "${APPNAME} Installer"
   VIAddVersionKey "ProductVersion" "${VERSION_LONG}"
 
@@ -307,7 +307,7 @@ FunctionEnd
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 Function CloseSecondLife
   Push $0
-  FindWindow $0 "Alchemy" ""
+  FindWindow $0 "SceneGate" ""
   IntCmp $0 0 DONE
   
   StrCmp $SKIP_DIALOGS "true" CLOSE
@@ -321,7 +321,7 @@ Function CloseSecondLife
     SendMessage $0 16 0 0
 
   LOOP:
-	FindWindow $0 "Alchemy" ""
+	FindWindow $0 "SceneGate" ""
 	IntCmp $0 0 DONE
 	Sleep 500
 	Goto LOOP
@@ -337,7 +337,7 @@ FunctionEnd
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 Function un.CloseSecondLife
   Push $0
-  FindWindow $0 "Alchemy" ""
+  FindWindow $0 "SceneGate" ""
   IntCmp $0 0 DONE
   MessageBox MB_OKCANCEL $(CloseSecondLifeUnInstMB) IDOK CLOSE IDCANCEL CANCEL_UNINSTALL
 
@@ -349,7 +349,7 @@ Function un.CloseSecondLife
     SendMessage $0 16 0 0
 
   LOOP:
-    FindWindow $0 "Alchemy" ""
+    FindWindow $0 "SceneGate" ""
     IntCmp $0 0 DONE
     Sleep 500
     Goto LOOP
@@ -488,12 +488,12 @@ Section "Viewer"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "DisplayVersion" "${VERSION_LONG}"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "InstallLocation" "$INSTDIR"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "InstallSource" "$EXEDIR\"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "HelpLink" "https://www.alchemyviewer.org"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "HelpLink" "https://www.infinitemetaverse.com"
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "NoModify" 1
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "NoRepair" 1
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "Publisher" "${VENDORSTR}"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "URLInfoAbout" "https://www.alchemyviewer.org"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "URLUpdateInfo" "https://www.alchemyviewer.org/p/downloads.html"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "URLInfoAbout" "https://www.infinitemetaverse.com"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "URLUpdateInfo" "https://www.infinitemetaverse.com"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "UninstallString" "$\"$INSTDIR\uninst.exe$\""
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\$INSTPROG" "QuietUninstallString" "$\"$INSTDIR\uninst.exe$\" /S"
   ${GetSize} "$INSTDIR" "/S=0K" $0 $1 $2

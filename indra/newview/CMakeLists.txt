@@ -766,7 +766,7 @@ set(viewer_SOURCE_FILES
     qtoolalign.cpp
     )
 
-set(VIEWER_BINARY_NAME "alchemy-bin" CACHE STRING
+set(VIEWER_BINARY_NAME "scenegate-bin" CACHE STRING
     "The name of the viewer executable to create.")
 
 set(viewer_HEADER_FILES
@@ -1791,7 +1791,7 @@ if (WINDOWS)
     set_target_properties(${VIEWER_BINARY_NAME}
         PROPERTIES
         LINK_FLAGS "/debug /SUBSYSTEM:WINDOWS ${TCMALLOC_LINK_FLAGS} ${TBBMALLOC_LINK_FLAGS}"
-        LINK_FLAGS_RELEASE "/MAP:\"alchemy-bin.MAP\""
+        LINK_FLAGS_RELEASE "/MAP:\"scenegate-bin.MAP\""
         )
 
     if(USE_PRECOMPILED_HEADERS)
@@ -2093,7 +2093,7 @@ set(ARTWORK_DIR ${CMAKE_CURRENT_SOURCE_DIR} CACHE PATH
     "Path to artwork files.")
 
 if (LINUX)
-  set(product Alchemy-${ARCH}-${VIEWER_SHORT_VERSION}.${VIEWER_VERSION_REVISION})
+  set(product SceneGate-${ARCH}-${VIEWER_SHORT_VERSION}.${VIEWER_VERSION_REVISION})
 
   # These are the generated targets that are copied to package/
   set(COPY_INPUT_DEPENDENCIES
@@ -2162,16 +2162,16 @@ endif (LINUX)
 
 if (DARWIN)
   # These all get set with PROPERTIES
-  set(product "Alchemy")
-  set(MACOSX_BUNDLE_INFO_STRING "Alchemy Viewer")
+  set(product "SceneGate")
+  set(MACOSX_BUNDLE_INFO_STRING "SceneGate Viewer")
   set(MACOSX_BUNDLE_ICON_FILE "SceneGate.icns")
-  set(MACOSX_BUNDLE_GUI_IDENTIFIER "org.alchemyviewer.viewer")
+  set(MACOSX_BUNDLE_GUI_IDENTIFIER "com.infinitemetaverse.scenegate")
   set(MACOSX_BUNDLE_LONG_VERSION_STRING "${VIEWER_CHANNEL} ${VIEWER_SHORT_VERSION}.${VIEWER_VERSION_REVISION}")
-  set(MACOSX_BUNDLE_BUNDLE_NAME "Alchemy")
+  set(MACOSX_BUNDLE_BUNDLE_NAME "SceneGate")
   set(MACOSX_BUNDLE_SHORT_VERSION_STRING "${VIEWER_SHORT_VERSION}")
   set(MACOSX_BUNDLE_BUNDLE_VERSION "${VIEWER_SHORT_VERSION}${VIEWER_MACOSX_PHASE}${VIEWER_REVISION}")
-  set(MACOSX_BUNDLE_COPYRIGHT "Copyright © 2013-2017 Alchemy Viewer Project")
-  set(MACOSX_BUNDLE_NSMAIN_NIB_FILE "Alchemy")
+  set(MACOSX_BUNDLE_COPYRIGHT "Copyright © 2018 Infinite Metaverse Alliance")
+  set(MACOSX_BUNDLE_NSMAIN_NIB_FILE "SceneGate")
   set(MACOSX_BUNDLE_NSPRINCIPAL_CLASS "LLNSApplication")
   
   set_target_properties(
@@ -2255,7 +2255,7 @@ if (PACKAGE)
   set(SYMBOL_SEARCH_DIRS "")
   if (WINDOWS)
     list(APPEND SYMBOL_SEARCH_DIRS "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}")
-    set(VIEWER_SYMBOL_FILE "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/alchemy-symbols-windows.tar.bz2")
+    set(VIEWER_SYMBOL_FILE "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/scenegate-symbols-windows.tar.bz2")
     # AlchemyPlugin.exe failing symbols dump - need to debug, might have to do with updated version of google breakpad
     # set(VIEWER_EXE_GLOBS "${VIEWER_BINARY_NAME}${CMAKE_EXECUTABLE_SUFFIX} AlchemyPlugin.exe")
     set(VIEWER_EXE_GLOBS "${VIEWER_BINARY_NAME}${CMAKE_EXECUTABLE_SUFFIX}")
@@ -2268,14 +2268,14 @@ if (PACKAGE)
     list(APPEND SYMBOL_SEARCH_DIRS "${CMAKE_BINARY_DIR}/llplugin/slplugin/${CMAKE_CFG_INTDIR}")
     list(APPEND SYMBOL_SEARCH_DIRS "${CMAKE_BINARY_DIR}/mac_crash_logger/${CMAKE_CFG_INTDIR}")
     list(APPEND SYMBOL_SEARCH_DIRS "${CMAKE_BINARY_DIR}/media_plugins/gstreamer010/${CMAKE_CFG_INTDIR}")
-    set(VIEWER_SYMBOL_FILE "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/alchemy-symbols-darwin.tar.bz2")
-    set(VIEWER_EXE_GLOBS "'Alchemy' AlchemyPlugin mac-crash-logger")
+    set(VIEWER_SYMBOL_FILE "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/scenegate-symbols-darwin.tar.bz2")
+    set(VIEWER_EXE_GLOBS "'SceneGate' AlchemyPlugin mac-crash-logger")
     set(VIEWER_LIB_GLOB "*.dylib")
   endif (DARWIN)
   if (LINUX)
     list(APPEND SYMBOL_SEARCH_DIRS "${CMAKE_CURRENT_BINARY_DIR}/packaged")
-    set(VIEWER_SYMBOL_FILE "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/alchemy-symbols-linux.tar.bz2")
-    set(VIEWER_EXE_GLOBS "do-not-directly-run-alchemy-bin AlchemyPlugin")
+    set(VIEWER_SYMBOL_FILE "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/scenegate-symbols-linux.tar.bz2")
+    set(VIEWER_EXE_GLOBS "do-not-directly-run-scenegate-bin AlchemyPlugin")
     set(VIEWER_LIB_GLOB "*${CMAKE_SHARED_MODULE_SUFFIX}*")
     set(VIEWER_COPY_MANIFEST copy_l_viewer_manifest)
   endif (LINUX)
