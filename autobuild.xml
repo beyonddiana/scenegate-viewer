@@ -3149,15 +3149,15 @@
     <key>package_description</key>
     <map>
       <key>copyright</key>
-      <string>Copyright (c) 2013-2017, Alchemy Viewer Project</string>
+      <string>Copyright (c) 2013-2017, SceneGate Viewer Project</string>
       <key>description</key>
-      <string>Alchemy Viewer</string>
+      <string>SceneGate Viewer</string>
       <key>license</key>
       <string>LGPL</string>
       <key>license_file</key>
       <string>docs/LICENSE-source.txt</string>
       <key>name</key>
-      <string>Alchemy Viewer</string>
+      <string>SceneGate Viewer</string>
       <key>platforms</key>
       <map>
         <key>common</key>
@@ -3178,7 +3178,7 @@
                 <array>
                   <string>-DCMAKE_BUILD_TYPE:STRING=Release</string>
                   <string>-DWORD_SIZE:STRING=32</string>
-                  <string>-DROOT_PROJECT_NAME:STRING=Alchemy</string>
+                  <string>-DROOT_PROJECT_NAME:STRING=SceneGate</string>
                   <string>-DINSTALL_PROPRIETARY=FALSE</string>
                 </array>
               </map>
@@ -3198,7 +3198,7 @@
                 <array>
                   <string>-DCMAKE_BUILD_TYPE:STRING=Debug</string>
                   <string>-DWORD_SIZE:STRING=32</string>
-                  <string>-DROOT_PROJECT_NAME:STRING=Alchemy</string>
+                  <string>-DROOT_PROJECT_NAME:STRING=SceneGate</string>
                   <string>-DINSTALL_PROPRIETARY=TRUE</string>
                 </array>
               </map>
@@ -3219,7 +3219,7 @@
                 <array>
                   <string>-DCMAKE_BUILD_TYPE:STRING=Debug</string>
                   <string>-DWORD_SIZE:STRING=32</string>
-                  <string>-DROOT_PROJECT_NAME:STRING=Alchemy</string>
+                  <string>-DROOT_PROJECT_NAME:STRING=SceneGate</string>
                   <string>-DINSTALL_PROPRIETARY=FALSE</string>
                 </array>
               </map>
@@ -3239,7 +3239,7 @@
                 <array>
                   <string>-DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo</string>
                   <string>-DWORD_SIZE:STRING=32</string>
-                  <string>-DROOT_PROJECT_NAME:STRING=Alchemy</string>
+                  <string>-DROOT_PROJECT_NAME:STRING=SceneGate</string>
                   <string>-DINSTALL_PROPRIETARY=TRUE</string>
                 </array>
               </map>
@@ -3260,7 +3260,7 @@
                 <array>
                   <string>-DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo</string>
                   <string>-DWORD_SIZE:STRING=32</string>
-                  <string>-DROOT_PROJECT_NAME:STRING=Alchemy</string>
+                  <string>-DROOT_PROJECT_NAME:STRING=SceneGate</string>
                   <string>-DINSTALL_PROPRIETARY=FALSE</string>
                 </array>
               </map>
@@ -3280,7 +3280,7 @@
                 <array>
                   <string>-DCMAKE_BUILD_TYPE:STRING=Release</string>
                   <string>-DWORD_SIZE:STRING=32</string>
-                  <string>-DROOT_PROJECT_NAME:STRING=Alchemy</string>
+                  <string>-DROOT_PROJECT_NAME:STRING=SceneGate</string>
                   <string>-DINSTALL_PROPRIETARY=TRUE</string>
                 </array>
               </map>
@@ -3301,7 +3301,7 @@
                 <array>
                   <string>-DCMAKE_BUILD_TYPE:STRING=Release</string>
                   <string>-DWORD_SIZE:STRING=32</string>
-                  <string>-DROOT_PROJECT_NAME:STRING=Alchemy</string>
+                  <string>-DROOT_PROJECT_NAME:STRING=SceneGate</string>
                   <string>-DINSTALL_PROPRIETARY=FALSE</string>
                 </array>
               </map>
@@ -3345,7 +3345,7 @@
                   <string>"Unix Makefiles"</string>
                   <string>-DCMAKE_BUILD_TYPE:STRING=Release</string>
                   <string>-DWORD_SIZE:STRING=64</string>
-                  <string>-DROOT_PROJECT_NAME:STRING=Alchemy</string>
+                  <string>-DROOT_PROJECT_NAME:STRING=SceneGate</string>
                   <string>-DINSTALL_PROPRIETARY=FALSE</string>
                 </array>
               </map>
@@ -3365,7 +3365,7 @@
                 <key>options</key>
                 <array>
                   <string>-configuration Debug</string>
-                  <string>-project Alchemy.xcodeproj</string>
+                  <string>-project SceneGate.xcodeproj</string>
                 </array>
               </map>
               <key>configure</key>
@@ -3392,7 +3392,7 @@
                 <key>options</key>
                 <array>
                   <string>-configuration Debug</string>
-                  <string>-project Alchemy.xcodeproj</string>
+                  <string>-project SceneGate.xcodeproj</string>
                 </array>
               </map>
               <key>configure</key>
@@ -3419,7 +3419,7 @@
                 <key>options</key>
                 <array>
                   <string>-configuration RelWithDebInfo</string>
-                  <string>-project Alchemy.xcodeproj</string>
+                  <string>-project SceneGate.xcodeproj</string>
                 </array>
               </map>
               <key>configure</key>
@@ -3448,7 +3448,7 @@
                 <key>options</key>
                 <array>
                   <string>-configuration RelWithDebInfo</string>
-                  <string>-project Alchemy.xcodeproj</string>
+                  <string>-project SceneGate.xcodeproj</string>
                 </array>
               </map>
               <key>configure</key>
@@ -3475,7 +3475,7 @@
                 <key>options</key>
                 <array>
                   <string>-configuration Release</string>
-                  <string>-project Alchemy.xcodeproj</string>
+                  <string>-project SceneGate.xcodeproj</string>
                 </array>
               </map>
               <key>configure</key>
@@ -3502,7 +3502,7 @@
                 <key>options</key>
                 <array>
                   <string>-configuration Release</string>
-                  <string>-project Alchemy.xcodeproj</string>
+                  <string>-project SceneGate.xcodeproj</string>
                 </array>
               </map>
               <key>configure</key>
@@ -3827,7 +3827,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>devenv</string>
@@ -3855,7 +3855,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>msbuild.exe</string>
@@ -3888,7 +3888,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>devenv</string>
@@ -3918,7 +3918,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>msbuild.exe</string>
@@ -3952,7 +3952,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>devenv</string>
@@ -3980,7 +3980,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>msbuild.exe</string>
@@ -4023,7 +4023,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>cov-build</string>
@@ -4060,7 +4060,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>BuildConsole</string>
@@ -4089,7 +4089,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>msbuild.exe</string>
@@ -4123,7 +4123,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>BuildConsole</string>
@@ -4154,7 +4154,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>msbuild.exe</string>
@@ -4189,7 +4189,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>BuildConsole</string>
@@ -4219,7 +4219,7 @@
               <map>
                 <key>arguments</key>
                 <array>
-                  <string>Alchemy.sln</string>
+                  <string>SceneGate.sln</string>
                 </array>
                 <key>command</key>
                 <string>msbuild.exe</string>
