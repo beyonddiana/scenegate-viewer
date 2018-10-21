@@ -15,33 +15,30 @@ if (NOT DEFINED VIEWER_SHORT_VERSION) # will be true in indra/, false in indra/n
            message(STATUS "Revision (from environment): ${VIEWER_VERSION_REVISION}")
 
         else (DEFINED ENV{revision})
-          find_program(MERCURIAL
-                       NAMES hg
-                       PATHS [HKEY_LOCAL_MACHINE\\Software\\TortoiseHG]
-                       PATH_SUFFIXES Mercurial)
-          mark_as_advanced(MERCURIAL)
-          if (MERCURIAL)
-            execute_process(COMMAND ${MERCURIAL} identify -n
+          find_package(Git)
+
+          if (Git_FOUND)
+            execute_process(COMMAND ${GIT_EXECUTABLE} rev-list --count HEAD
                             WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-                            RESULT_VARIABLE hg_id_result
-                            ERROR_VARIABLE hg_id_error
+                            RESULT_VARIABLE git_revlist_result
+                            ERROR_VARIABLE git_revlist_error
                             OUTPUT_VARIABLE VIEWER_VERSION_REVISION
                             OUTPUT_STRIP_TRAILING_WHITESPACE)
-            if (NOT ${hg_id_result} EQUAL 0)
-              message(SEND_ERROR "Revision number generation failed with output:\n${hg_id_error}")
-            else (NOT ${hg_id_result} EQUAL 0)
+            if (NOT ${git_revlist_result} EQUAL 0)
+              message(SEND_ERROR "Revision number generation failed with output:\n${git_revlist_error}")
+            else (NOT ${git_revlist_result} EQUAL 0)
               string(REGEX REPLACE "[^0-9a-f]" "" VIEWER_VERSION_REVISION ${VIEWER_VERSION_REVISION})
-            endif (NOT ${hg_id_result} EQUAL 0)
+            endif (NOT ${git_revlist_result} EQUAL 0)
             if ("${VIEWER_VERSION_REVISION}" MATCHES "^[0-9]+$")
               message(STATUS "Revision (from hg) ${VIEWER_VERSION_REVISION}")
             else ("${VIEWER_VERSION_REVISION}" MATCHES "^[0-9]+$")
               message(STATUS "Revision not set (repository not found?); using 0")
               set(VIEWER_VERSION_REVISION 0 )
             endif ("${VIEWER_VERSION_REVISION}" MATCHES "^[0-9]+$")
-           else (MERCURIAL)
-              message(STATUS "Revision not set: mercurial not found; using 0")
+           else (Git_FOUND)
+              message(STATUS "Revision not set: git not found; using 0")
               set(VIEWER_VERSION_REVISION 0)
-           endif (MERCURIAL)
+           endif (Git_FOUND)
         endif (DEFINED ENV{revision})
         message(STATUS "Building '${VIEWER_CHANNEL}' Version ${VIEWER_SHORT_VERSION}.${VIEWER_VERSION_REVISION}")
     else ( EXISTS ${VIEWER_VERSION_BASE_FILE} )
