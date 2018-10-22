@@ -314,8 +314,8 @@ int LLCrashLoggerWindows::processingLoop() {
     LL_INFOS() << "session ending.." << LL_ENDL;
     
     std::string per_run_dir = options["dumpdir"].asString();
-	std::string per_run_file = per_run_dir + "\\Alchemy.log";
-    std::string log_file = gDirUtilp->getExpandedFilename(LL_PATH_LOGS,"Alchemy.log");
+	std::string per_run_file = per_run_dir + "\\SceneGate.log";
+    std::string log_file = gDirUtilp->getExpandedFilename(LL_PATH_LOGS,"SceneGate.log");
 
 	if (gDirUtilp->fileExists(per_run_dir))  
 	{

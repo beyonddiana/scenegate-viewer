@@ -265,7 +265,7 @@ static LLAppViewerListener sAppViewerListener(LLAppViewer::instance);
 // viewer.cpp - these are only used in viewer, should be easily moved.
 
 #if LL_DARWIN
-const char * const LL_VERSION_BUNDLE_ID = "org.alchemyviewer.viewer";
+const char * const LL_VERSION_BUNDLE_ID = "com.infinitemetaverse.scenegate";
 extern void init_apple_menu(const char* product);
 #endif // LL_DARWIN
 
@@ -373,16 +373,16 @@ BOOL gLogoutInProgress = FALSE;
 // Internal globals... that should be removed.
 static std::string gArgs;
 const int MAX_MARKER_LENGTH = 1024;
-const std::string MARKER_FILE_NAME("Alchemy.exec_marker");
-const std::string START_MARKER_FILE_NAME("Alchemy.start_marker");
-const std::string ERROR_MARKER_FILE_NAME("Alchemy.error_marker");
-const std::string LLERROR_MARKER_FILE_NAME("Alchemy.llerror_marker");
-const std::string LOGOUT_MARKER_FILE_NAME("Alchemy.logout_marker");
+const std::string MARKER_FILE_NAME("SceneGate.exec_marker");
+const std::string START_MARKER_FILE_NAME("SceneGate.start_marker");
+const std::string ERROR_MARKER_FILE_NAME("SceneGate.error_marker");
+const std::string LLERROR_MARKER_FILE_NAME("SceneGate.llerror_marker");
+const std::string LOGOUT_MARKER_FILE_NAME("SceneGate.logout_marker");
 static BOOL gDoDisconnect = FALSE;
 static std::string gLaunchFileOnQuit;
 
 // Used on Win32 for other apps to identify our window (eg, win_setup)
-const char* const VIEWER_WINDOW_CLASSNAME = "Alchemy";
+const char* const VIEWER_WINDOW_CLASSNAME = "SceneGate";
 
 //-- LLDeferredTaskList ------------------------------------------------------
 
@@ -730,7 +730,7 @@ LLAppViewer::LLAppViewer()
 
 	// Need to do this initialization before we do anything else, since anything
 	// that touches files should really go through the lldir API
-	gDirUtilp->initAppDirs("Alchemy");
+	gDirUtilp->initAppDirs("SceneGate");
 	//
 	// IMPORTANT! Do NOT put anything that will write
 	// into the log files during normal startup until AFTER
@@ -2220,12 +2220,12 @@ void LLAppViewer::initLoggingAndGetLastDuration()
 
 	// Remove the last ".old" log file.
 	std::string old_log_file = gDirUtilp->getExpandedFilename(LL_PATH_LOGS,
-							     "Alchemy.old");
+							     "SceneGate.old");
 	LLFile::remove(old_log_file);
 
 	// Get name of the log file
 	std::string log_file = gDirUtilp->getExpandedFilename(LL_PATH_LOGS,
-							     "Alchemy.log");
+							     "SceneGate.log");
  	/*
 	 * Before touching any log files, compute the duration of the last run
 	 * by comparing the ctime of the previous start marker file with the ctime
@@ -3604,10 +3604,10 @@ void LLAppViewer::writeSystemInfo()
         gDebugInfo["Dynamic"] = LLSD::emptyMap();
     
 #if LL_WINDOWS
-	gDebugInfo["SLLog"] = gDirUtilp->getExpandedFilename(LL_PATH_DUMP,"Alchemy.log");
+	gDebugInfo["SLLog"] = gDirUtilp->getExpandedFilename(LL_PATH_DUMP,"SceneGate.log");
 #else
     //Not ideal but sufficient for good reporting.
-    gDebugInfo["SLLog"] = gDirUtilp->getExpandedFilename(LL_PATH_LOGS,"Alchemy.old");  //LLError::logFileName();
+    gDebugInfo["SLLog"] = gDirUtilp->getExpandedFilename(LL_PATH_LOGS,"SceneGate.old");  //LLError::logFileName();
 #endif
 
 	gDebugInfo["ClientInfo"]["Name"] = LLVersionInfo::getChannel();

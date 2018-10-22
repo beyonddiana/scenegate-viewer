@@ -729,7 +729,7 @@ class DarwinManifest(ViewerManifest):
                     self.path("SceneGate.icns")
                     self.end_prefix(icon_path)
 
-                self.path("Alchemy.nib")
+                self.path("SceneGate.nib")
 
                 # Translations
                 self.path("English.lproj/language.txt")

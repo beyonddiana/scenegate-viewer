@@ -11977,7 +11977,7 @@ Deny access for the following residents to this estate only or for [ALL_ESTATES]
    icon="alertmodal.tga"
    name="DebugSettingsContaminated"
    type="alertmodal">
-Use of the Debug Settings window without being instructed to by the Alchemy Development Team can lead to unexpected issues and will disqualify you from further support.
+Use of the Debug Settings window without being instructed to customer support can lead to unexpected issues and will disqualify you from further support.
 
 Are you sure you want to risk it?
     <tag>confirm</tag>

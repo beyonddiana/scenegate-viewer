@@ -1477,8 +1477,8 @@ if (DARWIN)
   # Add resource files to the project.
   set(viewer_RESOURCE_FILES
     SceneGate.icns
-    Info-Alchemy.plist
-    Alchemy.xib
+    Info-SceneGate.plist
+    SceneGate.xib
     # CMake doesn't seem to support Xcode language variants well just yet
     English.lproj/InfoPlist.strings
     English.lproj/language.txt
@@ -2180,11 +2180,11 @@ if (DARWIN)
     RESOURCE "${viewer_RESOURCE_FILES}"
     OUTPUT_NAME "${product}"
     MACOSX_BUNDLE_INFO_PLIST
-    "${CMAKE_CURRENT_SOURCE_DIR}/Info-Alchemy.plist"
+    "${CMAKE_CURRENT_SOURCE_DIR}/Info-SceneGate.plist"
     )
 
   configure_file(
-     "${CMAKE_CURRENT_SOURCE_DIR}/Info-Alchemy.plist"
+     "${CMAKE_CURRENT_SOURCE_DIR}/Info-SceneGate.plist"
      "${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/${product}.app/Contents/Info.plist"
     )
 

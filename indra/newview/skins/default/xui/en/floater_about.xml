@@ -130,7 +130,7 @@ Voice chat Audio coding: Polycom(R) Siren14(TM) (ITU-T Rec. G.722.1 Annex C)
       </panel>
     <panel
       border="true" 
-      label="Alchemy Credits" 
+      label="Credits" 
       help_topic="about_alchemy_credits_tab"
       name="alchemy_credits_panel">
       <text
@@ -142,7 +142,7 @@ Voice chat Audio coding: Polycom(R) Siren14(TM) (ITU-T Rec. G.722.1 Annex C)
           top="10"
           width="435"
           wrap="true">
-Alchemy Viewer is brought to you by the Alchemy Development Group:
+SceneGate is brought to you by Infinite Metaverse Alliance. SceneGate is based on Alchemy Viewer by:
       </text>
       <text_editor
        enabled="false" 
