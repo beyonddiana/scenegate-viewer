@@ -82,22 +82,20 @@ const std::string GRID_SLURL_BASE = "slurl_base";
 /// slurl base for grid slapp links
 const std::string GRID_APP_SLURL_BASE = "app_slurl_base";
 
-const std::string DEFAULT_LOGIN_PAGE = "https://login.alchemyviewer.org/";
+const std::string MAIN_GRID_LOGIN_URI = "https://grid.metaversedepot.com:8002";
 
-const std::string MAIN_GRID_LOGIN_URI = "https://login.agni.lindenlab.com/cgi-bin/login.cgi";
+const std::string SL_UPDATE_QUERY_URL = "";
 
-const std::string SL_UPDATE_QUERY_URL = "https://update.secondlife.com/update";
+const std::string MAIN_GRID_SLURL_BASE = "x-grid-info://grid.metaversedepot.com:8002/region/";
+const std::string SYSTEM_GRID_APP_SLURL_BASE = "x-grid-info://grid.metaversedepot.com:8002/app";
 
-const std::string MAIN_GRID_SLURL_BASE = "http://maps.secondlife.com/secondlife/";
-const std::string SYSTEM_GRID_APP_SLURL_BASE = "secondlife:///app";
+const std::string MAIN_GRID_WEB_PROFILE_URL = "";
 
-const std::string MAIN_GRID_WEB_PROFILE_URL = "https://my.secondlife.com/";
-
-const char* SYSTEM_GRID_SLURL_BASE = "secondlife://%s/secondlife/";
+const char* SYSTEM_GRID_SLURL_BASE = "x-grid-info://grid.metaversedepot.com:8002";
 const char* DEFAULT_SLURL_BASE = "x-grid-info://%s/region/";
 const char* DEFAULT_APP_SLURL_BASE = "x-grid-info://%s/app";
 
-const std::string ALCHEMY_UPDATE_SERVICE = "https://app.alchemyviewer.org/update";
+const std::string ALCHEMY_UPDATE_SERVICE = "";
 
 //
 const std::string GRIDS_USER_FILE = "grids_user.xml";
@@ -141,30 +139,18 @@ void LLGridManager::initialize(const std::string& grid_file)
 	mGridFile = grid_file;
 	// as we don't want an attacker to override our grid list
 	// to point the default grid to an invalid grid
-  	addSystemGrid("Second Life",
+  	addSystemGrid("Metaverse Depot",
 				  MAINGRID,
-				  MAIN_GRID_LOGIN_URI,
-				  "https://secondlife.com/helpers/",
-				  DEFAULT_LOGIN_PAGE,
-				  "https://secondlife.com/my/account/request.php",
-				  "https://join.secondlife.com/?sourceid=AlchemyViewer",
-				  SL_UPDATE_QUERY_URL,
-				  MAIN_GRID_WEB_PROFILE_URL,
-				  "Linden Lab",
-				  "secondlife",
-				  "Agni");
-	addSystemGrid("Second Life Beta",
-				  "util.aditi.lindenlab.com",
-				  "https://login.aditi.lindenlab.com/cgi-bin/login.cgi",
-				  "http://aditi-secondlife.webdev.lindenlab.com/helpers/",
-				  DEFAULT_LOGIN_PAGE,
-				  "https://secondlife.com/my/account/request.php",
-				  "https://join.secondlife.com/?sourceid=AlchemyViewer",
-				  SL_UPDATE_QUERY_URL,
-				  "https://my.aditi.lindenlab.com/",
-				  "Linden Lab",
-				  "secondlife",
-				  "Aditi");
+				  "http://grid.metaversedepot.com:8002/",
+				  "http://grid.metaversedepot.com:8002/helper/",
+				  "http://grid.metaversedepot.com:8002/",
+				  "http://grid.metaversedepot.com:8002/wifi/forgotpassword",
+				  "http://grid.metaversedepot.com:8002/",
+				  "",
+				  "",
+				  "Metaverse Depot",
+				  "opensim",
+				  "MD");
 
 	LLSD other_grids;
 	llifstream llsd_xml;
