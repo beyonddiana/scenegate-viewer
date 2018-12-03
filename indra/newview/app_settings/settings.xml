@@ -1516,7 +1516,7 @@
       <key>Type</key>
       <string>F32</string>
       <key>Value</key>
-      <real>1.0</real>
+      <real>1.2</real>
     </map>
     <key>CameraPosOnLogout</key>
     <map>
@@ -4208,9 +4208,9 @@
       <string>Vector3D</string>
       <key>Value</key>
       <array>
-        <real>1.0</real>
+        <real>-2.0</real>
         <real>0.0</real>
-        <real>1.0</real>
+        <real>-0.2</real>
       </array>
     </map>
     <key>FocusOffsetShoulderView</key>
@@ -4223,9 +4223,9 @@
       <string>Vector3D</string>
       <key>Value</key>
       <array>
-        <real>0.0</real>
-        <real>-0.740</real>
-        <real>0.7</real>
+        <real>-1.4</real>
+        <real>-0.24</real>
+        <real>-0.2</real>
       </array>
     </map>
     <key>FocusOffsetFrontView</key>
@@ -4253,9 +4253,9 @@
       <string>Vector3D</string>
       <key>Value</key>
       <array>
-        <real>1.5</real>
-        <real>0.7</real>
         <real>1.0</real>
+        <real>0.0</real>
+        <real>0.5</real>
       </array>
     </map>
     <key>FocusPosOnLogout</key>
