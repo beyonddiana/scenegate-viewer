@@ -35,7 +35,7 @@
    decimal_digits="0"
    follows="top|right"
    layout="topleft"
-   max_val="512"
+   max_val="1024"
    min_val="64"
    width="55"
    increment="32"

@@ -201,7 +201,7 @@
     layout="topleft"
     left="30"
     min_val="64"
-    max_val="512"
+    max_val="1024"
     name="DrawDistance"
     top_delta="40"
     width="330" />
@@ -501,7 +501,7 @@
          label_width="125"
          layout="topleft"
          left="230"
-         max_val="512"
+         max_val="1024"
          min_val="64"
          name="DrawDistance"
          top="0"
