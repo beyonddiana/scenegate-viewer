@@ -4225,7 +4225,7 @@
       <array>
         <real>0.6</real>
         <real>-0.74</real>
-        <real>-0.3</real>
+        <real>0.3</real>
       </array>
     </map>
     <key>FocusOffsetFrontView</key>
@@ -4240,7 +4240,7 @@
       <array>
         <real>0.0</real>
         <real>0.0</real>
-        <real>-0.0</real>
+        <real>0.0</real>
       </array>
     </map>
     <key>FocusOffsetGroupView</key>
@@ -10116,7 +10116,7 @@
   <key>MaxAttachmentComplexity</key>
   <map>
     <key>Comment</key>
-    <string>Attachment's render weightÂ limit</string>
+    <string>Attachment's render weight limit</string>
     <key>Persist</key>
     <integer>1</integer>
     <key>Type</key>
