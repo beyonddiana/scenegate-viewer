@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<panel
+ border="true"
+ follows="left|top|right|bottom"
+ height="408"
+ label="Modes"
+ layout="topleft"
+ left="102"
+ name="modes_panel"
+ top="1"
+ width="517">
+   <text
+     type="string"
+     length="1"
+     follows="left|top"
+     height="15"
+     layout="topleft"
+     left="30"
+     name="mode_textbox"
+     top="10"
+     width="400">
+        Mode:
+    </text>
+    <combo_box
+     control_name="Mode"
+     follows="left|top"
+     height="23"
+     layout="topleft"
+     left="50"
+     max_chars="135"
+     name="mode_combobox"
+     width="200">
+        <combo_box.item
+         enabled="true"
+         label="Extended"
+         name="Extended Mode"
+         value="0" />
+        <combo_box.item
+         enabled="true"
+         label="Simplified"
+         name="Simplified"
+         value="1" />
+    </combo_box>
+    <text
+ font="SansSerifSmall"
+     type="string"
+     text_color="White_50"
+     length="1"
+     follows="left|top"
+     height="18"
+     layout="topleft"
+     left_pad="10"
+     name="language_textbox2"
+     width="200">
+        (Requires restart)
+    </text>
+</panel>

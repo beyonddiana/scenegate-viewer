@@ -127,7 +127,7 @@ const int HTTP_TRACE_MAX = HTTP_TRACE_CURL_BODIES;
 // We want to span a few windows to allow transport to slow
 // after onset of the throttles and then recover without a final
 // failure.  Other systems may need other constants.
-const int HTTP_RETRY_COUNT_DEFAULT = 8;
+const int HTTP_RETRY_COUNT_DEFAULT = 2;
 const int HTTP_RETRY_COUNT_MIN = 0;
 const int HTTP_RETRY_COUNT_MAX = 100;
 
@@ -136,10 +136,10 @@ const int HTTP_REDIRECTS_DEFAULT = 10;
 // Timeout value used for both connect and protocol exchange.
 // Retries and time-on-queue are not included and aren't
 // accounted for.
-const long HTTP_REQUEST_TIMEOUT_DEFAULT = 30L;
+const long HTTP_REQUEST_TIMEOUT_DEFAULT = 2L;
 const long HTTP_REQUEST_XFER_TIMEOUT_DEFAULT = 0L;
 const long HTTP_REQUEST_TIMEOUT_MIN = 0L;
-const long HTTP_REQUEST_TIMEOUT_MAX = 3600L;
+const long HTTP_REQUEST_TIMEOUT_MAX = 1000L;
 
 // Limits on connection counts
 const int HTTP_CONNECTION_LIMIT_DEFAULT = 8;

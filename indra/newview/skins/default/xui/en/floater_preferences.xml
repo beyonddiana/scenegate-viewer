@@ -143,6 +143,11 @@
          label="Skinning"
          layout="topleft"
          name="skins" />
+		 <panel
+         filename="panel_preferences_modes.xml"
+         label="Modes"
+         layout="topleft"
+         name="modes" />
     </tab_container>
 
 </floater>

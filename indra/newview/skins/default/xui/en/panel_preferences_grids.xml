@@ -92,7 +92,7 @@
      function="Pref.RefreshGrid" />
   </button>
   <button
-   enabled="false"
+   enabled="true"
    layout="topleft"
    follows="left|top"
    height="19"
@@ -116,6 +116,19 @@
    width="75">
     <button.commit_callback
      function="Pref.DebugGrid" />
+  </button>
+  <button
+   enabled="false"
+   layout="topleft"
+   follows="left|top"
+   height="19"
+   label="Reset"
+   left_delta="0"
+   name="reset_grids"
+   top_pad="134"
+   width="75">
+    <button.commit_callback
+     function="Pref.ResetGrids" />
   </button>
   <check_box
    control_name="ForceShowGrid"

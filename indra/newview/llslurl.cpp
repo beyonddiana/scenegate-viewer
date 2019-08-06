@@ -131,7 +131,7 @@ LLSLURL::LLSLURL(const std::string& slurl)
 			
 			// default to maingrid
 			
-			mGrid = MAINGRID;
+			//mGrid = MAINGRID;
 			
 			if ((path_array[0].asString() == LLSLURL::SLURL_SECONDLIFE_PATH) ||
 				(path_array[0].asString() == LLSLURL::SLURL_APP_PATH))
@@ -146,7 +146,7 @@ LLSLURL::LLSLURL(const std::string& slurl)
 				{
 					// If the slurl is in the form secondlife:///secondlife/<region> form, 
 					// then we are in fact on maingrid.  
-					mGrid = MAINGRID;
+					//mGrid = MAINGRID;
 				}
 				else if(path_array[0].asString() == LLSLURL::SLURL_APP_PATH)
 				{
@@ -192,7 +192,7 @@ LLSLURL::LLSLURL(const std::string& slurl)
 				(slurl_uri.hostName() == LLSLURL::MAPS_SECONDLIFE_COM))
 			{
 				// slurl.com implies maingrid
-				mGrid = MAINGRID;
+				//mGrid = MAINGRID;
 			}
 		    else
 			{

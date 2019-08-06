@@ -97,6 +97,7 @@ protected:
 	void		onLanguageChange();
 	void		onNotificationsChange(const std::string& OptionName);
 	void		onNameTagOpacityChange(const LLSD& newvalue);
+	void		onModeChange();
 
 	// set value of "DoNotDisturbResponseChanged" in account settings depending on whether do not disturb response
 	// string differs from default after user changes.
@@ -190,8 +191,10 @@ private:
 	void onClickRemoveGrid();
 	void onClickRefreshGrid();
 	void onClickDebugGrid();
+	void onClickResetGrids();
 	void onSelectGrid(const LLSD& data);
 	bool handleRemoveGridCB(const LLSD& notification, const LLSD& response);
+	bool handleResetGridsCB(const LLSD& notification, const LLSD& response);
 	
 	void loadUserSkins();
 	void reloadSkinList();

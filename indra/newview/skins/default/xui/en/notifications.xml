@@ -11441,6 +11441,14 @@ Previous simulator: [OLD_VERSION]
     [GRID] cannot be removed while you are connected to it.
   </notification>
   <notification
+ icon="alertmodal.tga"
+ name="TryingToFindGrid"
+ type="alertmodal">
+    <tag>info</tag>
+    <tag>opensim</tag>
+    Trying to connect to [GRID]. Please be patient, this can take some time.
+  </notification>
+  <notification
    icon="alertmodal.tga"
    name="ConfirmRemoveGrid"
    type="alertmodal">
@@ -11449,6 +11457,19 @@ Previous simulator: [OLD_VERSION]
     Are you sure you want to remove [GRID] from the grid list?
     <usetemplate
      ignoretext="Confirm removing grids"
+     name="okcancelignore"
+     notext="Cancel"
+     yestext="OK"/>
+  </notification>
+  <notification
+ icon="alertmodal.tga"
+ name="ConfirmResetGrids"
+ type="alertmodal">
+    <tag>opensim</tag>
+    <tag>confirm</tag>
+    Are you sure you want to reset the grid list? This will undo all modifications made with the grid manager.
+    <usetemplate
+     ignoretext="Confirm resetting the grid list"
      name="okcancelignore"
      notext="Cancel"
      yestext="OK"/>

@@ -352,7 +352,7 @@ void LLXMLRPCTransaction::Impl::init(XMLRPC_REQUEST request, bool useGzip)
 	// LLRefCounted starts with a 1 ref, so don't add a ref in the smart pointer
 	httpOpts = boost::make_shared<LLCore::HttpOptions>(); 
 
-	httpOpts->setTimeout(40L);
+	httpOpts->setTimeout(3L);
 
 	bool vefifySSLCert = !gSavedSettings.getBOOL("NoVerifySSLCert");
 	mCertStore = gSavedSettings.getString("CertStore");

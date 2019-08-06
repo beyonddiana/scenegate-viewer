@@ -165,6 +165,8 @@ public:
 				goto fail;
 			}
 
+			LL_INFOS() << "XUI FILE: " << instance().getCurFileName() << LL_ENDL;
+
 			LLView* view = getInstance()->createFromXML(root_node, parent, filename, registry, NULL);
 			if (view)
 			{

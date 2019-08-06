@@ -407,6 +407,14 @@ void check_merchant_status(bool force)
 
 void init_menus()
 {
+	auto menu_mode = gSavedSettings.getControl("Mode");
+
+	LL_INFOS("InitInfo") << "Configuration initialized. MODE SELECTED: " << menu_mode->getValue() << LL_ENDL;
+
+	LL_INFOS("InitInfo") << "Value of registry menu_viewer: " << gMenuHolder->getLabel() << gMenuHolder->getValue() << LL_ENDL;
+
+	//LL_INFOS("InitInfo") << "gMenuHolder value: " << gMenuHolder-> << LL_ENDL;
+
 	// Initialize actions
 	initialize_menus();
 
@@ -485,6 +493,7 @@ void init_menus()
 	LLView* menu_bar_holder = gViewerWindow->getRootView()->getChildView("menu_bar_holder");
 
 	gMenuBarView = LLUICtrlFactory::getInstance()->createFromFile<LLMenuBarGL>("menu_viewer.xml", gMenuHolder, LLViewerMenuHolderGL::child_registry_t::instance());
+
 	gMenuBarView->setRect(LLRect(0, menu_bar_holder->getRect().mTop, 0, menu_bar_holder->getRect().mTop - MENU_BAR_HEIGHT));
 	gMenuBarView->setBackgroundColor( color );
 

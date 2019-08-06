@@ -38,6 +38,8 @@
 #include "lltrans.h"
 #include "llxmlnode.h"
 
+#include <iostream>
+
 /// key used to store the grid, and the name attribute in the grid data
 const std::string  GRID_VALUE = "keyname";
 /// the value displayed in the grid selector menu, and other human-oriented text
@@ -82,16 +84,16 @@ const std::string GRID_SLURL_BASE = "slurl_base";
 /// slurl base for grid slapp links
 const std::string GRID_APP_SLURL_BASE = "app_slurl_base";
 
-const std::string MAIN_GRID_LOGIN_URI = "https://grid.metaversedepot.com:8002";
+std::string MAIN_GRID_LOGIN_URI = "";
 
 const std::string SL_UPDATE_QUERY_URL = "";
 
-const std::string MAIN_GRID_SLURL_BASE = "x-grid-info://grid.metaversedepot.com:8002/region/";
-const std::string SYSTEM_GRID_APP_SLURL_BASE = "x-grid-info://grid.metaversedepot.com:8002/app";
+const std::string MAIN_GRID_SLURL_BASE = "";
+const std::string SYSTEM_GRID_APP_SLURL_BASE = "";
 
 const std::string MAIN_GRID_WEB_PROFILE_URL = "";
 
-const char* SYSTEM_GRID_SLURL_BASE = "x-grid-info://grid.metaversedepot.com:8002";
+const char* SYSTEM_GRID_SLURL_BASE = "";
 const char* DEFAULT_SLURL_BASE = "x-grid-info://%s/region/";
 const char* DEFAULT_APP_SLURL_BASE = "x-grid-info://%s/app";
 
@@ -99,6 +101,7 @@ const std::string ALCHEMY_UPDATE_SERVICE = "";
 
 //
 const std::string GRIDS_USER_FILE = "grids_user.xml";
+const std::string DEFAULT_GRIDS_FILE = "default_grids.xml";
 
 LLGridManager::LLGridManager()
 :	mLoggedIn(false)
@@ -110,11 +113,10 @@ LLGridManager::LLGridManager()
 	// as that would be a security issue when they are overwritten by
 	// an attacker.  Don't want someone snagging a password.
 	std::string grid_file = gDirUtilp->getExpandedFilename(LL_PATH_USER_SETTINGS,
-														   GRIDS_USER_FILE);
+													   GRIDS_USER_FILE);
 	LL_DEBUGS("GridManager")<<LL_ENDL;
 
 	initialize(grid_file);
-
 }
 
 
@@ -130,6 +132,8 @@ LLGridManager::LLGridManager()
 // and the grids.xml file
 void LLGridManager::initialize(const std::string& grid_file)
 {
+	bool cache_exists = false;
+
 	// default grid list.
 	// Don't move to a modifiable file for security reasons,
 	mGrid.clear() ;
@@ -139,18 +143,6 @@ void LLGridManager::initialize(const std::string& grid_file)
 	mGridFile = grid_file;
 	// as we don't want an attacker to override our grid list
 	// to point the default grid to an invalid grid
-  	addSystemGrid("Metaverse Depot",
-				  MAINGRID,
-				  "http://grid.metaversedepot.com:8002/",
-				  "http://grid.metaversedepot.com:8002/helper/",
-				  "http://grid.metaversedepot.com:8002/",
-				  "http://grid.metaversedepot.com:8002/wifi/forgotpassword",
-				  "http://grid.metaversedepot.com:8002/",
-				  "",
-				  "",
-				  "Metaverse Depot",
-				  "opensim",
-				  "MD");
 
 	LLSD other_grids;
 	llifstream llsd_xml;
@@ -163,9 +155,13 @@ void LLGridManager::initialize(const std::string& grid_file)
 		// they overwrite an existing grid.
 		if( llsd_xml.is_open())
 		{
+			cache_exists = true;
+
 			LLSDSerialize::fromXMLDocument( other_grids, llsd_xml );
 			if(other_grids.isMap())
 			{
+				bool main_grid_set = false;
+
 				for(LLSD::map_iterator grid_itr = other_grids.beginMap();
 					grid_itr != other_grids.endMap();
 					++grid_itr)
@@ -186,6 +182,12 @@ void LLGridManager::initialize(const std::string& grid_file)
 					{
 						LL_WARNS("GridManager") << "failed to add invalid grid '"<<key_name<<"'"<<LL_ENDL;
 					}
+					if (!main_grid_set)
+					{
+						MAIN_GRID_LOGIN_URI = grid[GRID_LOGIN_URI_VALUE];
+						#define MAINGRID MAIN_GRID_LOGIN_URI
+						main_grid_set = true;
+					}
 				}
 				llsd_xml.close();
 			}
@@ -202,6 +204,15 @@ void LLGridManager::initialize(const std::string& grid_file)
 	else
 	{
 		LL_DEBUGS("GridManager")<<"no grid file specified"<<LL_ENDL;
+	}
+
+	// if the grid cache (user_grids.xml file) doesn't exist we assume it is either the first time
+	// the viewer is started or the grid cache has been removed with the intention of reinitializing the grids
+	// to the system grids and the default grids
+	if (!cache_exists)
+	{
+		initialize(gDirUtilp->getExpandedFilename(LL_PATH_APP_SETTINGS, DEFAULT_GRIDS_FILE));
+		LL_WARNS("GridManager") << "Loading grids from default_grids.xml and system grids" << LL_ENDL;
 	}
 
 	// load a grid from the command line.
@@ -242,8 +253,10 @@ void LLGridManager::initialize(const std::string& grid_file)
 	if(mGrid.empty())
 	{
 		// no grid was specified so default to maingrid
-		LL_INFOS("GridManager") << "Default grid to "<<MAINGRID<< LL_ENDL;
-		mGrid = MAINGRID;
+		LL_INFOS("GridManager") << "Default grid to "<< mGridList.beginMap()->first << LL_ENDL;
+		//mGrid = MAINGRID;
+		//Since we removed the system grids we just point to the first grid in the gridlist as the initial main grid
+		mGrid = mGridList.beginMap()->first;
 	}
 
 	LLControlVariablePtr grid_control = gSavedSettings.getControl("CurrentGrid");
@@ -351,6 +364,10 @@ bool LLGridManager::addGrid(LLSD& grid_data)
 
 bool LLGridManager::removeGrid(const std::string& gridkey)
 {
+	if (!mGridList.has(gridkey))
+	{
+	}
+
 	//Grid must exist and not be a system addition
 	if (mGridList.has(gridkey) && !isSystemGrid(gridkey))
 	{

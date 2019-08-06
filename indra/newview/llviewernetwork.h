@@ -28,9 +28,6 @@
 #ifndef LL_LLVIEWERNETWORK_H
 #define LL_LLVIEWERNETWORK_H
 
-// @TODO this really should be private, but is used in llslurl
-#define MAINGRID "grid.metaversedepot.com:8002"
-
 /**
  * @brief A singleton class to manage the grids available to the viewer.
  *

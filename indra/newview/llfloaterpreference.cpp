@@ -145,6 +145,8 @@ static const F32 MIN_ARC_LOG = log(MIN_ARC_LIMIT);
 static const F32 MAX_ARC_LOG = log(MAX_ARC_LIMIT);
 static const F32 ARC_LIMIT_MAP_SCALE = (MAX_ARC_LOG - MIN_ARC_LOG) / (MAX_INDIRECT_ARC_LIMIT - MIN_INDIRECT_ARC_LIMIT);
 
+const std::string DEFAULT_GRIDS_FILE = "default_grids.xml";
+
 const std::string DEFAULT_SKIN = "alchemy";
 
 class LLVoiceSetKeyDialog : public LLModalDialog
@@ -427,6 +429,7 @@ LLFloaterPreference::LLFloaterPreference(const LLSD& key)
 	mCommitCallbackRegistrar.add("Pref.RemoveGrid", boost::bind(&LLFloaterPreference::onClickRemoveGrid, this));
 	mCommitCallbackRegistrar.add("Pref.RefreshGrid", boost::bind(&LLFloaterPreference::onClickRefreshGrid, this));
 	mCommitCallbackRegistrar.add("Pref.DebugGrid", boost::bind(&LLFloaterPreference::onClickDebugGrid, this));
+	mCommitCallbackRegistrar.add("Pref.ResetGrids", boost::bind(&LLFloaterPreference::onClickResetGrids, this));
 	mCommitCallbackRegistrar.add("Pref.SelectGrid", boost::bind(&LLFloaterPreference::onSelectGrid, this, _2));
 	mCommitCallbackRegistrar.add("Pref.AddSkin", boost::bind(&LLFloaterPreference::onAddSkin, this));
 	mCommitCallbackRegistrar.add("Pref.RemoveSkin", boost::bind(&LLFloaterPreference::onRemoveSkin, this));
@@ -499,6 +502,8 @@ void LLFloaterPreference::saveAvatarProperties( void )
 
 BOOL LLFloaterPreference::postBuild()
 {
+	getChild<LLUICtrl>("reset_grids")->setEnabled(true);
+
 	gSavedSettings.getControl("ChatBubbleOpacity")->getSignal()->connect(boost::bind(&LLFloaterPreference::onNameTagOpacityChange, this, _2));
 
 	gSavedSettings.getControl("PreferredMaturity")->getSignal()->connect(boost::bind(&LLFloaterPreference::onChangeMaturity, this));
@@ -528,6 +533,8 @@ BOOL LLFloaterPreference::postBuild()
 	getChild<LLComboBox>("GroupChatOptions")->setCommitCallback(boost::bind(&LLFloaterPreference::onNotificationsChange, this,"GroupChatOptions"));
 	getChild<LLComboBox>("NearbyChatOptions")->setCommitCallback(boost::bind(&LLFloaterPreference::onNotificationsChange, this,"NearbyChatOptions"));
 	getChild<LLComboBox>("ObjectIMOptions")->setCommitCallback(boost::bind(&LLFloaterPreference::onNotificationsChange, this,"ObjectIMOptions"));
+
+	getChild<LLComboBox>("mode_combobox")->setCommitCallback(boost::bind(&LLFloaterPreference::onModeChange, this));
 
 	// if floater is opened before login set default localized do not disturb message
 	if (LLStartUp::getStartupState() < STATE_STARTED)
@@ -623,6 +630,8 @@ void LLFloaterPreference::refreshGridList()
 void LLFloaterPreference::onClickAddGrid()
 {
 	std::string login_uri = getChild<LLLineEditor>("add_grid")->getValue().asString();
+
+	LLNotificationsUtil::add("TryingToFindGrid", LLSD().with("GRID", login_uri));
 	LLGridManager::getInstance()->addRemoteGrid(login_uri, LLGridManager::ADD_MANUAL);
 }
 
@@ -664,10 +673,18 @@ void LLFloaterPreference::onClickDebugGrid()
 	LLFloaterReg::showInstance("generic_text", args);
 }
 
+void LLFloaterPreference::onClickResetGrids()
+{
+	std::string grid = getChild<LLScrollListCtrl>("grid_list")->getSelectedValue().asString();
+
+	LLNotificationsUtil::add("ConfirmResetGrids",
+		LLSD().with("GRID", LLGridManager::getInstance()->getGridLabel(grid)),
+		LLSD(grid), boost::bind(&LLFloaterPreference::handleResetGridsCB, this, _1, _2));
+}
+
 void LLFloaterPreference::onSelectGrid(const LLSD& data)
 {
-	getChild<LLUICtrl>("remove_grid")->setEnabled(LLGridManager::getInstance()->getGrid() != data.asString()
-												  && !LLGridManager::getInstance()->isSystemGrid(data.asString()));
+	getChild<LLUICtrl>("remove_grid")->setEnabled(!LLGridManager::getInstance()->isSystemGrid(data.asString()));
 	getChild<LLUICtrl>("refresh_grid")->setEnabled(!LLGridManager::getInstance()->isSystemGrid(data.asString()));
 	getChild<LLUICtrl>("debug_grid")->setEnabled(!data.asString().empty());
 }
@@ -683,6 +700,25 @@ bool LLFloaterPreference::handleRemoveGridCB(const LLSD& notification, const LLS
 									 LLSD().with("GRID", notification["substitutions"]["GRID"].asString()));
 	}
 	return false;
+}
+
+bool LLFloaterPreference::handleResetGridsCB(const LLSD& notification, const LLSD& response)
+{
+	const S32 option = LLNotificationsUtil::getSelectedOption(notification, response);
+	if (0 == option)
+	{
+		// First we delete all grids
+		LLScrollListCtrl* grid_list = getChild<LLScrollListCtrl>("grid_list");
+		grid_list->deleteAllItems();
+
+		std::string grid_cache_dir = gDirUtilp->getExpandedFilename(LL_PATH_USER_SETTINGS, "");
+		std::string mask = "grids_user.xml";
+		gDirUtilp->deleteFilesInDir(grid_cache_dir, mask);
+
+		// Then we reinitialize the grids
+		LLGridManager::getInstance()->initialize(gDirUtilp->getExpandedFilename(LL_PATH_APP_SETTINGS, DEFAULT_GRIDS_FILE));
+	}
+	return true;
 }
 
 ////////////////////////////////////////////////////
@@ -1365,6 +1401,18 @@ void LLFloaterPreference::onLanguageChange()
 		LLNotificationsUtil::add("ChangeLanguage");
 		mLanguageChanged = true;
 	}
+}
+
+// Called when user changes mode via the combobox.
+void LLFloaterPreference::onModeChange()
+{
+	// Let the user know that the change will only take effect after restart.
+	// Do it only once so that we're not too irritating.
+	//if (!mLanguageChanged)
+	//{
+	//	LLNotificationsUtil::add("ChangeLanguage");
+	//	mLanguageChanged = true;
+	//}
 }
 
 void LLFloaterPreference::onNotificationsChange(const std::string& OptionName)
