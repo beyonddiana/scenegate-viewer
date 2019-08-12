@@ -1457,9 +1457,9 @@
       <string>Vector3</string>
       <key>Value</key>
       <array>
-        <real>-3.0</real>
+        <real>-2.0</real>
         <real>0.0</real>
-        <real>0.75</real>
+        <real>-0.2</real>
       </array>
     </map>
     <key>CameraOffsetShoulderView</key>
@@ -1472,9 +1472,9 @@
       <string>Vector3</string>
       <key>Value</key>
       <array>
-        <real>-1.7</real>
-        <real>-0.7</real>
-        <real>-0.350</real>
+        <real>-1.4</real>
+        <real>-0.24</real>
+        <real>-0.2</real>
       </array>
     </map>
     <key>CameraOffsetFrontView</key>
@@ -1487,9 +1487,9 @@
       <string>Vector3</string>
       <key>Value</key>
       <array>
-        <real>2.2</real>
+        <real>2.0</real>
         <real>0.0</real>
-        <real>0.0</real>
+        <real>-0.4</real>
       </array>
     </map>
     <key>CameraOffsetGroupView</key>
@@ -1502,9 +1502,9 @@
       <string>Vector3</string>
       <key>Value</key>
       <array>
-        <real>-1.0</real>
-        <real>0.7</real>
         <real>0.5</real>
+        <real>3.4</real>
+        <real>-0.2</real>
       </array>
     </map>
     <key>CameraOffsetScale</key>
@@ -1516,7 +1516,7 @@
       <key>Type</key>
       <string>F32</string>
       <key>Value</key>
-      <real>1.0</real>
+      <real>1.2</real>
     </map>
     <key>CameraPosOnLogout</key>
     <map>
@@ -4208,9 +4208,9 @@
       <string>Vector3D</string>
       <key>Value</key>
       <array>
-        <real>1.0</real>
+        <real>0.9</real>
         <real>0.0</real>
-        <real>1.0</real>
+        <real>0.2</real>
       </array>
     </map>
     <key>FocusOffsetShoulderView</key>
@@ -4253,9 +4253,9 @@
       <string>Vector3D</string>
       <key>Value</key>
       <array>
-        <real>1.5</real>
-        <real>0.7</real>
         <real>1.0</real>
+        <real>0.0</real>
+        <real>0.5</real>
       </array>
     </map>
     <key>FocusPosOnLogout</key>
@@ -10116,7 +10116,7 @@
   <key>MaxAttachmentComplexity</key>
   <map>
     <key>Comment</key>
-    <string>Attachment's render weight�limit</string>
+    <string>Attachment's render weight limit</string>
     <key>Persist</key>
     <integer>1</integer>
     <key>Type</key>
@@ -16023,7 +16023,7 @@
       <key>Value</key>
       <integer>0</integer>
     </map>
-  <key>Mode</key>
+	  <key>Mode</key>
   <map>
     <key>Comment</key>
     <string>
