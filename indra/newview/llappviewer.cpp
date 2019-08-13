@@ -721,6 +721,8 @@ LLAppViewer::LLAppViewer()
 	mUpdater(new LLUpdaterService()),
 	mIsFirstRun(false)
 {
+	LL_INFOS() << "Viewer Constructor!" << LL_ENDL;
+
 	if(nullptr != sInstance)
 	{
 		LL_ERRS() << "Oh no! An instance of LLAppViewer already exists! LLAppViewer is sort of like a singleton." << LL_ENDL;
@@ -731,6 +733,7 @@ LLAppViewer::LLAppViewer()
 	// Need to do this initialization before we do anything else, since anything
 	// that touches files should really go through the lldir API
 	gDirUtilp->initAppDirs("SceneGate");
+	
 	//
 	// IMPORTANT! Do NOT put anything that will write
 	// into the log files during normal startup until AFTER
@@ -825,6 +828,12 @@ bool LLAppViewer::init()
 	//set the max heap size.
 	initMaxHeapSize() ;
 	LLCoros::instance().setStackSize(gSavedSettings.getS32("CoroutineStackSize"));
+
+	// Setting the menu mode
+	std::string menu_mode = gSavedSettings.getControl("Mode")->getValue();
+	gDirUtilp->setMenuMode(menu_mode);
+
+	LL_INFOS("InitInfo") << "MENU MODE SELECTED: " << menu_mode << LL_ENDL;
 
 	// write Google Breakpad minidump files to a per-run dump directory to avoid multiple viewer issues.
 	std::string logdir = gDirUtilp->getExpandedFilename(LL_PATH_DUMP, "");
@@ -2795,7 +2804,8 @@ bool LLAppViewer::initConfiguration()
 	gWindowTitle = LLTrans::getString("APP_NAME");
 	if (LLVersionInfo::getViewerMaturity() != LLVersionInfo::RELEASE_VIEWER)
 	{
-		gWindowTitle = LLVersionInfo::getChannelAndVersion();
+		gWindowTitle = LLTrans::getString("APP_NAME");
+		//gWindowTitle = LLVersionInfo::getChannelAndVersion();
 	}
 #if LL_DEBUG
 	gWindowTitle += std::string(" [DEBUG]");
