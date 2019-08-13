@@ -1567,6 +1567,13 @@ Changing language will take effect after you restart [APP_NAME].
   </notification>
 
   <notification
+ icon="alertmodal.tga"
+ name="ChangeMode"
+ type="alertmodal">
+    Changing viewer-mode will take effect after you restart [APP_NAME].
+  </notification>
+
+  <notification
    icon="alertmodal.tga"
    name="GoToAuctionPage"
    type="alertmodal">

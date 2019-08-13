@@ -211,21 +211,21 @@ bool LLToolBarView::addCommandInternal(const LLCommandId& command, LLToolBar* to
 	return true;
 }
 
-bool LLToolBarView::loadToolbars(bool force_default)
+bool LLToolBarView::loadToolbars(const std::string& mode_prefix, bool force_default)
 {
 	LLToolBarView::ToolbarSet toolbar_set;
 	bool err = false;
 	
 	// Load the toolbars.xml file
-	std::string toolbar_file = gDirUtilp->getExpandedFilename(LL_PATH_PER_SL_ACCOUNT, "toolbars.xml");
+	std::string toolbar_file = gDirUtilp->getExpandedFilename(LL_PATH_PER_SL_ACCOUNT, gDirUtilp->getMenuMode(), "toolbars.xml"); //  in the middle
 	if (force_default)
 	{
-		toolbar_file = gDirUtilp->getExpandedFilename(LL_PATH_APP_SETTINGS, "toolbars.xml");
+		toolbar_file = gDirUtilp->getExpandedFilename(LL_PATH_APP_SETTINGS, gDirUtilp->getMenuMode(), "toolbars.xml");
 	}
 	else if (!gDirUtilp->fileExists(toolbar_file)) 
 	{
 		LL_WARNS() << "User toolbars def not found -> use default" << LL_ENDL;
-		toolbar_file = gDirUtilp->getExpandedFilename(LL_PATH_APP_SETTINGS, "toolbars.xml");
+		toolbar_file = gDirUtilp->getExpandedFilename(LL_PATH_APP_SETTINGS, gDirUtilp->getMenuMode(), "toolbars.xml");
 	}
 	
 	LLXMLNodePtr root;
@@ -263,7 +263,7 @@ bool LLToolBarView::loadToolbars(bool force_default)
 	    }
 
 		// Try to load the default toolbars
-		return loadToolbars(true);
+		return loadToolbars(mode_prefix, true);
 	}
 	
 	// Clear the toolbars now before adding the loaded commands and settings
@@ -380,7 +380,7 @@ bool LLToolBarView::loadDefaultToolbars()
 
 	if (gToolBarView)
 	{
-		retval = gToolBarView->loadToolbars(true);
+		retval = gToolBarView->loadToolbars("", true);
 		if (retval)
 		{
 			gToolBarView->saveToolbars();

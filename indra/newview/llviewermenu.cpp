@@ -407,13 +407,7 @@ void check_merchant_status(bool force)
 
 void init_menus()
 {
-	auto menu_mode = gSavedSettings.getControl("Mode");
 
-	LL_INFOS("InitInfo") << "Configuration initialized. MODE SELECTED: " << menu_mode->getValue() << LL_ENDL;
-
-	LL_INFOS("InitInfo") << "Value of registry menu_viewer: " << gMenuHolder->getLabel() << gMenuHolder->getValue() << LL_ENDL;
-
-	//LL_INFOS("InitInfo") << "gMenuHolder value: " << gMenuHolder-> << LL_ENDL;
 
 	// Initialize actions
 	initialize_menus();
@@ -434,33 +428,29 @@ void init_menus()
 	/// Context menus
 	///
 
-	const widget_registry_t& registry =
-		LLViewerMenuHolderGL::child_registry_t::instance();
+	const widget_registry_t& registry = LLViewerMenuHolderGL::child_registry_t::instance();
+
 	gEditMenu = LLUICtrlFactory::createFromFile<LLMenuGL>("menu_edit.xml", gMenuHolder, registry);
-	gMenuAvatarSelf = LLUICtrlFactory::createFromFile<LLContextMenu>(
-		"menu_avatar_self.xml", gMenuHolder, registry);
-	gMenuAvatarOther = LLUICtrlFactory::createFromFile<LLContextMenu>(
-		"menu_avatar_other.xml", gMenuHolder, registry);
+
+	gMenuAvatarSelf = LLUICtrlFactory::createFromFile<LLContextMenu>("menu_avatar_self.xml", gMenuHolder, registry);
+
+
+	gMenuAvatarOther = LLUICtrlFactory::createFromFile<LLContextMenu>("menu_avatar_other.xml", gMenuHolder, registry);
 
 	gDetachScreenPieMenu = gMenuHolder->getChild<LLContextMenu>("Object Detach HUD", true);
 	gDetachPieMenu = gMenuHolder->getChild<LLContextMenu>("Object Detach", true);
 
-	gMenuObject = LLUICtrlFactory::createFromFile<LLContextMenu>(
-		"menu_object.xml", gMenuHolder, registry);
+	gMenuObject = LLUICtrlFactory::createFromFile<LLContextMenu>("menu_object.xml", gMenuHolder, registry);
 
 	gAttachScreenPieMenu = gMenuHolder->getChild<LLContextMenu>("Object Attach HUD");
 	gAttachPieMenu = gMenuHolder->getChild<LLContextMenu>("Object Attach");
 
-	gMenuAttachmentSelf = LLUICtrlFactory::createFromFile<LLContextMenu>(
-		"menu_attachment_self.xml", gMenuHolder, registry);
-	gMenuAttachmentOther = LLUICtrlFactory::createFromFile<LLContextMenu>(
-		"menu_attachment_other.xml", gMenuHolder, registry);
+	gMenuAttachmentSelf = LLUICtrlFactory::createFromFile<LLContextMenu>("menu_attachment_self.xml", gMenuHolder, registry);
+	gMenuAttachmentOther = LLUICtrlFactory::createFromFile<LLContextMenu>("menu_attachment_other.xml", gMenuHolder, registry);
 
-	gMenuLand = LLUICtrlFactory::createFromFile<LLContextMenu>(
-		"menu_land.xml", gMenuHolder, registry);
+	gMenuLand = LLUICtrlFactory::createFromFile<LLContextMenu>("menu_land.xml", gMenuHolder, registry);
 
-	gMenuMuteParticle = LLUICtrlFactory::createFromFile<LLContextMenu>(
-		"menu_mute_particle.xml", gMenuHolder, registry);
+	gMenuMuteParticle = LLUICtrlFactory::createFromFile<LLContextMenu>("menu_mute_particle.xml", gMenuHolder, registry);
 
 	///
 	/// set up the colors

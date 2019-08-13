@@ -84,7 +84,8 @@ LLDir::LLDir()
 	mDirDelimiter("/"), // fallback to forward slash if not overridden
 	mLanguage("en"),
 	mUserName("undefined"),
-	mGrid("")
+	mGrid(""),
+	mMenuMode("")
 {
 }
 
@@ -356,6 +357,11 @@ const std::string  LLDir::getCacheDir(bool get_default) const
 	}
 }
 
+const std::string &LLDir::getMenuMode() const
+{
+	return mMenuMode;
+}
+
 // Return the default cache directory
 std::string LLDir::buildSLOSCacheDir() const
 {
@@ -470,6 +476,15 @@ static std::string ELLPathToString(ELLPath location)
 
 std::string LLDir::getExpandedFilename(ELLPath location, const std::string& filename) const
 {
+	if (location == LL_PATH_APP_SETTINGS)
+	{
+		auto possible_mode_file = getExpandedFilename(location, gDirUtilp->getMenuMode(), filename);
+		if (!possible_mode_file.empty() && fileExists(possible_mode_file) && !filename.empty())
+		{
+			LL_INFOS() << "Found " << filename << " in specific app settings - mode directory '" << gDirUtilp->getMenuMode() << "'" << " with value: " << possible_mode_file << LL_ENDL;
+			return possible_mode_file;
+		}
+	}
 	return getExpandedFilename(location, "", filename);
 }
 
@@ -589,6 +604,8 @@ std::string LLDir::getExpandedFilename(ELLPath location, const std::string& subd
 				<< ", '" << subdir1 << "', '" << subdir2 << "', '" << in_filename
 				<< "': prefix is empty, possible bad filename" << LL_ENDL;
 	}
+
+	//std::string mode_prefix = add(prefix, mMenuMode);
 
 	std::string expanded_filename = add(add(prefix, subdir1), subdir2);
 	if (expanded_filename.empty() && in_filename.empty())
@@ -1034,6 +1051,11 @@ bool LLDir::setCacheDir(const std::string &path)
 	}
 }
 
+void LLDir::setMenuMode(const std::string &mode)
+{
+	mMenuMode = mode;
+}
+
 void LLDir::dumpCurrentDirectories()
 {
 	LL_DEBUGS("AppInit","Directories") << "Current Directories:" << LL_ENDL;
@@ -1043,13 +1065,14 @@ void LLDir::dumpCurrentDirectories()
 	LL_DEBUGS("AppInit","Directories") << "  ExecutableFilename:    " << getExecutableFilename() << LL_ENDL;
 	LL_DEBUGS("AppInit","Directories") << "  ExecutableDir:         " << getExecutableDir() << LL_ENDL;
 	LL_DEBUGS("AppInit","Directories") << "  ExecutablePathAndName: " << getExecutablePathAndName() << LL_ENDL;
+	LL_DEBUGS("AppInit","Directories") << "  MenuMode:				" << getMenuMode() << LL_ENDL;
 	LL_DEBUGS("AppInit","Directories") << "  WorkingDir:            " << getWorkingDir() << LL_ENDL;
 	LL_DEBUGS("AppInit","Directories") << "  AppRODataDir:          " << getAppRODataDir() << LL_ENDL;
 	LL_DEBUGS("AppInit","Directories") << "  OSUserDir:             " << getOSUserDir() << LL_ENDL;
 	LL_DEBUGS("AppInit","Directories") << "  OSUserAppDir:          " << getOSUserAppDir() << LL_ENDL;
 	LL_DEBUGS("AppInit","Directories") << "  LindenUserDir:         " << getLindenUserDir() << LL_ENDL;
 	LL_DEBUGS("AppInit","Directories") << "  TempDir:               " << getTempDir() << LL_ENDL;
-	LL_DEBUGS("AppInit","Directories") << "  CAFile:				 " << getCAFile() << LL_ENDL;
+	LL_DEBUGS("AppInit","Directories") << "  CAFile:				" << getCAFile() << LL_ENDL;
 	LL_DEBUGS("AppInit","Directories") << "  SkinBaseDir:           " << getSkinBaseDir() << LL_ENDL;
 	LL_DEBUGS("AppInit","Directories") << "  SkinDir:               " << getSkinDir() << LL_ENDL;
 	LL_DEBUGS("AppInit","Directories") << "  UserSkinDir:           " << getUserSkinDir() << LL_ENDL;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<toolbars>
+  <bottom_toolbar
+    button_display_mode="icons_with_text">
+    <command name="chat"/>
+    <command name="speak"/>
+    <command name="people"/>
+    <command name="profile"/>
+  </bottom_toolbar>
+  <left_toolbar
+    button_display_mode="icons_only_small">
+    <command name="search"/>
+    <command name="places"/>
+  </left_toolbar>
+  <right_toolbar
+    button_display_mode="icons_only">
+  </right_toolbar>
+</toolbars>

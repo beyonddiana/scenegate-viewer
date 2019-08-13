@@ -534,7 +534,7 @@ BOOL LLFloaterPreference::postBuild()
 	getChild<LLComboBox>("NearbyChatOptions")->setCommitCallback(boost::bind(&LLFloaterPreference::onNotificationsChange, this,"NearbyChatOptions"));
 	getChild<LLComboBox>("ObjectIMOptions")->setCommitCallback(boost::bind(&LLFloaterPreference::onNotificationsChange, this,"ObjectIMOptions"));
 
-	getChild<LLComboBox>("mode_combobox")->setCommitCallback(boost::bind(&LLFloaterPreference::onModeChange, this));
+	getChild<LLComboBox>("mode_combobox")->setCommitCallback(boost::bind(&LLFloaterPreference::onModeChange, this, _2));
 
 	// if floater is opened before login set default localized do not disturb message
 	if (LLStartUp::getStartupState() < STATE_STARTED)
@@ -1404,15 +1404,14 @@ void LLFloaterPreference::onLanguageChange()
 }
 
 // Called when user changes mode via the combobox.
-void LLFloaterPreference::onModeChange()
+void LLFloaterPreference::onModeChange(const LLSD& data)
 {
-	// Let the user know that the change will only take effect after restart.
-	// Do it only once so that we're not too irritating.
-	//if (!mLanguageChanged)
-	//{
-	//	LLNotificationsUtil::add("ChangeLanguage");
-	//	mLanguageChanged = true;
-	//}
+	if (data.asString() != getChild<LLComboBox>("mode_combobox")->getSelectedItemLabel())
+	{
+		LLNotificationsUtil::add("ChangeMode");
+		gSavedSettings.setBOOL("PurgeCacheOnNextStartup", TRUE);
+		LL_INFOS() << "Set purge cache on next startup to true." << LL_ENDL;
+	}
 }
 
 void LLFloaterPreference::onNotificationsChange(const std::string& OptionName)
@@ -1725,7 +1724,6 @@ void LLFloaterPreference::onClickEnablePopup()
 	for (itor = items.begin(); itor != items.end(); ++itor)
 	{
 		LLNotificationTemplatePtr templatep = LLNotifications::instance().getTemplate(*(std::string*)((*itor)->getUserdata()));
-		//gSavedSettings.setWarning(templatep->mName, TRUE);
 		std::string notification_name = templatep->mName;
 		LLUI::sSettingGroups["ignores"]->setBOOL(notification_name, TRUE);
 	}

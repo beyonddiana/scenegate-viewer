@@ -153,21 +153,32 @@ public:
 	template<typename T>
 	static T* createFromFile(const std::string &filename, LLView *parent, const widget_registry_t& registry)
 	{
+		LL_INFOS() << "Create from file menu mode: " << gDirUtilp->getMenuMode() << LL_ENDL;
+
+		std::string mode_prefix = gDirUtilp->getMenuMode() + gDirUtilp->getDirDelimiter();
+		std::string fixed_filename = mode_prefix + filename;
+
 		T* widget = NULL;
 
-		instance().pushFileName(filename);
+		instance().pushFileName(fixed_filename);
 		{
 			LLXMLNodePtr root_node;
 
-			if (!LLUICtrlFactory::getLayeredXMLNode(filename, root_node))
-				{							
-				LL_WARNS() << "Couldn't parse XUI file: " << instance().getCurFileName() << LL_ENDL;
-				goto fail;
+			if (!LLUICtrlFactory::getLayeredXMLNode(fixed_filename, root_node))
+			{	
+				// A mode-specific file is not configured, try using the default one
+				instance().popFileName();
+				fixed_filename = filename;
+				instance().pushFileName(fixed_filename);
+
+				if (!LLUICtrlFactory::getLayeredXMLNode(fixed_filename, root_node))
+				{
+					LL_WARNS() << "Couldn't parse XUI file: " << instance().getCurFileName() << LL_ENDL;
+					goto fail;
+				}
 			}
 
-			LL_INFOS() << "XUI FILE: " << instance().getCurFileName() << LL_ENDL;
-
-			LLView* view = getInstance()->createFromXML(root_node, parent, filename, registry, NULL);
+			LLView* view = getInstance()->createFromXML(root_node, parent, fixed_filename, registry, NULL);
 			if (view)
 			{
 				widget = dynamic_cast<T*>(view);
@@ -175,7 +186,7 @@ public:
 				if (!widget) 
 				{
 					// <alchemy> - UNDEFINED BEHAVIOR
-					LL_ERRS() << "Widget in " << filename << " was of type " << typeid(view).name() << " instead of expected type " << typeid(T).name() << LL_ENDL;
+					LL_ERRS() << "Widget in " << fixed_filename << " was of type " << typeid(view).name() << " instead of expected type " << typeid(T).name() << LL_ENDL;
 					//LL_WARNS() << "Widget in " << filename << " was of type " << typeid(view).name() << " instead of expected type " << typeid(T).name() << LL_ENDL;
 					//delete view;
 					//view = NULL;

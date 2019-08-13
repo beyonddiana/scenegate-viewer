@@ -49,6 +49,7 @@ typedef enum ELLPath
 	LL_PATH_DEFAULT_SKIN = 17,
 	LL_PATH_FONTS = 18,
     LL_PATH_DUMP = 19,
+	LL_PATH_MODE = 20,
 	LL_PATH_LAST
 } ELLPath;
 
@@ -93,6 +94,7 @@ class LLDir
 	const std::string &getPerAccountChatLogsDir() const;	// Location of the per account chat logs dir.
 	const std::string &getTempDir() const;			// Common temporary directory
 	const std::string  getCacheDir(bool get_default = false) const;	// Location of the cache.
+	const std::string &getMenuMode() const; // Difficulty mode of the viewer's menu settings files
 	const std::string &getOSCacheDir() const;		// location of OS-specific cache folder (may be empty string)
 	const std::string &getCAFile() const;			// File containing TLS certificate authorities
 	const std::string &getDirDelimiter() const;	// directory separator for platform (ie. '\' or '/' or ':')
@@ -187,6 +189,7 @@ class LLDir
 	virtual std::string getSkinFolder() const;
 	virtual std::string getLanguage() const;
 	virtual bool setCacheDir(const std::string &path);
+	virtual void setMenuMode(const std::string &mode);
 	virtual void updatePerAccountChatLogsDir();
 
 	virtual void dumpCurrentDirectories();
@@ -248,6 +251,7 @@ protected:
     static std::string sDumpDir;            // Per-run crash report subdir of log directory.
 	std::string mUserName;				// Current user name
 	std::string mGrid;					// Current grid
+	std::string mMenuMode;				// Selected menu mode
 };
 
 void dir_exists_or_crash(const std::string &dir_name);

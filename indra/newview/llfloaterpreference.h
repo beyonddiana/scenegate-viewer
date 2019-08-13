@@ -97,7 +97,7 @@ protected:
 	void		onLanguageChange();
 	void		onNotificationsChange(const std::string& OptionName);
 	void		onNameTagOpacityChange(const LLSD& newvalue);
-	void		onModeChange();
+	void		onModeChange(const LLSD& data);
 
 	// set value of "DoNotDisturbResponseChanged" in account settings depending on whether do not disturb response
 	// string differs from default after user changes.

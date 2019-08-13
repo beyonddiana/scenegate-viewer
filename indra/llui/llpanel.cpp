@@ -811,22 +811,33 @@ BOOL LLPanel::buildFromFile(const std::string& filename, const LLPanel::Params& 
 	BOOL didPost = FALSE;
 	LLXMLNodePtr root;
 
-	if (!LLUICtrlFactory::getLayeredXMLNode(filename, root))
+	std::string modified_filename = gDirUtilp->getMenuMode() + gDirUtilp->getDirDelimiter() + filename;
+
+	if (!LLUICtrlFactory::getLayeredXMLNode(modified_filename, root))
 	{
-		LL_WARNS() << "Couldn't parse panel from: " << filename << LL_ENDL;
-		return didPost;
+		modified_filename = filename;
+
+		if (!LLUICtrlFactory::getLayeredXMLNode(modified_filename, root))
+		{
+			LL_WARNS() << "Couldn't parse panel from: " << modified_filename << LL_ENDL;
+			return didPost;
+		}
+	}
+	else
+	{
+		LL_INFOS() << "Found mode specific configuration file: " << filename << LL_ENDL;
 	}
 
 	// root must be called panel
 	if( !root->hasName("panel" ) )
 	{
-		LL_WARNS() << "Root node should be named panel in : " << filename << LL_ENDL;
+		LL_WARNS() << "Root node should be named panel in : " << modified_filename << LL_ENDL;
 		return didPost;
 	}
 
-	LL_DEBUGS() << "Building panel " << filename << LL_ENDL;
+	LL_DEBUGS() << "Building panel " << modified_filename << LL_ENDL;
 
-	LLUICtrlFactory::instance().pushFileName(filename);
+	LLUICtrlFactory::instance().pushFileName(modified_filename);
 	{
 		if (!getFactoryMap().empty())
 		{
@@ -842,7 +853,7 @@ BOOL LLPanel::buildFromFile(const std::string& filename, const LLPanel::Params& 
 		getCommitCallbackRegistrar().popScope();
 		getEnableCallbackRegistrar().popScope();
 		
-		setXMLFilename(filename);
+		setXMLFilename(modified_filename);
 
 		if (!getFactoryMap().empty())
 		{
@@ -880,4 +891,3 @@ void set_child_visible(LLView* parent, const std::string& child_name, bool visib
 {
 	parent->getChildView(child_name)->setVisible(visible);
 }
-

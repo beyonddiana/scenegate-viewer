@@ -57,6 +57,11 @@ class ViewerManifest(LLManifest):
         # files during the build (see copy_w_viewer_manifest
         # and copy_l_viewer_manifest targets)
         return 'package' in self.args['actions']
+    
+    def get_immediate_subdirectories(self, a_dir):
+        listx = [name for name in os.listdir(a_dir)
+            if os.path.isdir(os.path.join(a_dir, name))]
+        return listx
 
     def construct(self):
         super(ViewerManifest, self).construct()
@@ -71,6 +76,12 @@ class ViewerManifest(LLManifest):
                 self.path("*.ini")
                 self.path("*.xml")
                 self.path("*.db2")
+
+                mode_settings_dir = ""
+
+                for sub_dir in [x for x in self.get_immediate_subdirectories(self.src_path_of(mode_settings_dir)) if x != "shaders" and x != "filters" and x != "windlight"]:
+                    print sub_dir
+                    self.path(sub_dir + "/*xml")
 
                 # include the entire shaders directory recursively
                 self.path("shaders")
@@ -160,8 +171,15 @@ class ViewerManifest(LLManifest):
                     self.path("*.png")
                     self.path("textures.xml")
                     self.end_prefix("*/textures")
+
+                mode_dir = "default/xui/en"
+
+                for sub_dir in [x for x in self.get_immediate_subdirectories(self.src_path_of(mode_dir)) if x != "widgets"]:
+                    self.path(mode_dir + "/" + sub_dir + "/*xml")
+
                 self.path("*/xui/*/*.xml")
                 self.path("*/xui/*/widgets/*.xml")
+                self.path("*/xui/*/*.xml")
                 self.path("*/*.xml")
                 self.path("*/*.ini")
                 self.path("*/*.json")
@@ -213,7 +231,8 @@ class ViewerManifest(LLManifest):
         elif channel_qualifier.startswith('project'):
             channel_type='project'
         else:
-            channel_type='test'
+            #channel_type='test'
+			channel_type='release'
         return channel_type
 
     def channel_variant_app_suffix(self):

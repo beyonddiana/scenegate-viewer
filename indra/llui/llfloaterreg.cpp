@@ -52,8 +52,20 @@ static LLFloaterRegListener sFloaterRegListener;
 //static
 void LLFloaterReg::add(const std::string& name, const std::string& filename, const LLFloaterBuildFunc& func, const std::string& groupname)
 {
+	std::string mode_prefixed_filename = gDirUtilp->getMenuMode() + gDirUtilp->getDirDelimiter() + filename;
+	std::vector<std::string> mode_paths = gDirUtilp->findSkinnedFilenames(LLDir::XUI, mode_prefixed_filename);
+
+	if (!mode_paths.empty())
+	{
+		LL_INFOS() << "Specific mode floater configuration file found: " << filename << LL_ENDL;
+		sBuildMap[name].mFile = mode_prefixed_filename;
+	}
+	else
+	{
+		sBuildMap[name].mFile = filename;
+	}
+
 	sBuildMap[name].mFunc = func;
-	sBuildMap[name].mFile = filename;
 	sGroupMap[name] = groupname.empty() ? name : groupname;
 	sGroupMap[groupname] = groupname; // for referencing directly by group name
 }

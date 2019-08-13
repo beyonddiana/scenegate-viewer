@@ -34,12 +34,12 @@
          enabled="true"
          label="Extended"
          name="Extended Mode"
-         value="0" />
+         value="extended" />
         <combo_box.item
          enabled="true"
          label="Simplified"
          name="Simplified"
-         value="1" />
+         value="simplified" />
     </combo_box>
     <text
  font="SansSerifSmall"
