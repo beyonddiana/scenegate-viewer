@@ -169,13 +169,16 @@ bool LLUICtrlFactory::getLayeredXMLNode(const std::string &xui_filename, LLXMLNo
                                         LLDir::ESkinConstraint constraint)
 {
 	LL_RECORD_BLOCK_TIME(FTM_XML_PARSE);
-	std::vector<std::string> paths =
-		gDirUtilp->findSkinnedFilenames(LLDir::XUI, xui_filename, constraint);
+	std::vector<std::string> paths = gDirUtilp->findSkinnedFilenames(LLDir::XUI + gDirUtilp->getDirDelimiter() + gDirUtilp->getMenuMode(), xui_filename, constraint);
 
 	if (paths.empty())
 	{
-		// sometimes whole path is passed in as filename
-		paths.push_back(xui_filename);
+		paths = gDirUtilp->findSkinnedFilenames(LLDir::XUI, xui_filename, constraint);
+		if (paths.empty())
+		{
+			// sometimes whole path is passed in as filename
+			paths.push_back(xui_filename);
+		}
 	}
 
 	return LLXMLNode::getLayeredXMLNode(root, paths);
