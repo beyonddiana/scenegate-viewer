@@ -1330,7 +1330,8 @@ bool LLTextureFetchWorker::doWork(S32 param)
 			}
 			else
 			{
-				//LL_INFOS(LOG_TXT) << mID << " waiting to retry for " << wait_seconds << " seconds" << LL_ENDL;
+				LL_INFOS() << "LLTEXTURE FETCH" << LL_ENDL;
+				LL_INFOS(LOG_TXT) << mID << " waiting to retry for " << wait_seconds << " seconds" << LL_ENDL;
 				return false;
 			}
 		}
@@ -1338,7 +1339,7 @@ bool LLTextureFetchWorker::doWork(S32 param)
 		static LLCachedControl<bool> use_http(gSavedSettings, "ImagePipelineUseHTTP", true);
 
 // 		if (mHost.isInvalid()) get_url = false;
-		if ( (use_http || LLGridManager::instance().isInSecondlife()) && mCanUseHTTP && mUrl.empty())//get http url.
+		if ( (use_http && mCanUseHTTP && mUrl.empty() || LLGridManager::instance().isInSecondlife()) && mCanUseHTTP && mUrl.empty())//get http url.
 		{
 			LLViewerRegion* region = NULL;
 			if (mHost.isInvalid())
@@ -1351,7 +1352,7 @@ bool LLTextureFetchWorker::doWork(S32 param)
 				std::string http_url = region->getViewerAssetUrl();
 				if (http_url.empty())
 				{
-					http_url = region->getLegacyHttpUrl();
+					http_url = region->getCapability("GetTexture");
 				}
 				if (!http_url.empty())
 				{
