@@ -162,6 +162,9 @@ LLSD LLResourceUploadInfo::generatePostBody()
 
 void LLResourceUploadInfo::logPreparedUpload()
 {
+	LL_INFOS() << "ENTERING LOGPREPAREDUPLOAD()" << LL_ENDL;
+
+
     LL_INFOS() << "*** Uploading: " << std::endl <<
         "Type: " << LLAssetType::lookup(mAssetType) << std::endl <<
         "UUID: " << mAssetId.asString() << std::endl <<
@@ -741,6 +744,7 @@ LLSD LLScriptAssetUpload::generatePostBody()
 /*static*/
 LLUUID LLViewerAssetUpload::EnqueueInventoryUpload(const std::string &url, const LLResourceUploadInfo::ptr_t &uploadInfo)
 {
+	LL_INFOS() << "EnqueueInventoryUpload CALLED" << LL_ENDL;
     std::string procName("LLViewerAssetUpload::AssetInventoryUploadCoproc(");
     
     LLUUID queueId = LLCoprocedureManager::instance().enqueueCoprocedure("Upload", 
@@ -755,6 +759,7 @@ LLUUID LLViewerAssetUpload::EnqueueInventoryUpload(const std::string &url, const
 void LLViewerAssetUpload::AssetInventoryUploadCoproc(LLCoreHttpUtil::HttpCoroutineAdapter::ptr_t &httpAdapter, 
     const LLUUID &id, std::string url, LLResourceUploadInfo::ptr_t uploadInfo)
 {
+	LL_INFOS() << "AssetInventoryUploadCoproc CALLED" << LL_ENDL;
     LLCore::HttpRequest::ptr_t httpRequest(new LLCore::HttpRequest);
     LLCore::HttpOptions::ptr_t httpOptions(new LLCore::HttpOptions);
     httpOptions->setTimeout(LL_ASSET_UPLOAD_TIMEOUT_SEC);

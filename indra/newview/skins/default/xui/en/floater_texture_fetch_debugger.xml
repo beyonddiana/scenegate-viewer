@@ -258,7 +258,7 @@
      control_name="TextureFetchSource"
      follows="top|left"
      draw_border="false"
-     height="25"
+     h  eight="25"
      layout="topleft"
      left_pad="0"
      name="texture_source"

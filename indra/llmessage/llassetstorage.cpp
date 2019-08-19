@@ -455,6 +455,7 @@ void LLAssetStorage::getAssetData(const LLUUID uuid,
                                   void *user_data, 
                                   BOOL is_priority)
 {
+	LL_INFOS() << "Get Asset Data UUID: " << uuid << LL_ENDL;
     LL_DEBUGS("AssetStorage") << "LLAssetStorage::getAssetData() - " << uuid << "," << LLAssetType::lookup(type) << LL_ENDL;
 
     LL_DEBUGS("AssetStorage") << "ASSET_TRACE requesting " << uuid << " type " << LLAssetType::lookup(type) << LL_ENDL;

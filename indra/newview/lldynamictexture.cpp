@@ -127,6 +127,7 @@ BOOL LLViewerDynamicTexture::render()
 //-----------------------------------------------------------------------------
 void LLViewerDynamicTexture::preRender(BOOL clear_depth)
 {
+	LL_INFOS() << "PRERENDERING DYNAMIC TEXTURE" << LL_ENDL;
 	//only images up to 512x512 are supported
 	llassert(mFullHeight <= 512);
 	llassert(mFullWidth <= 512);
@@ -173,6 +174,7 @@ void LLViewerDynamicTexture::preRender(BOOL clear_depth)
 //-----------------------------------------------------------------------------
 void LLViewerDynamicTexture::postRender(BOOL success)
 {
+	LL_INFOS() << "POSTRENDERING DYNAMIC TEXTURE" << LL_ENDL;
 	{
 		if (success)
 		{
@@ -237,7 +239,9 @@ BOOL LLViewerDynamicTexture::updateAllInstances()
 		{
 			LLViewerDynamicTexture *dynamicTexture = *iter;
 			if (dynamicTexture->needsRender())
-			{				
+			{	
+				LL_INFOS() << "In updateAllInstances - needsRender" << LL_ENDL;
+
 				glClear(GL_DEPTH_BUFFER_BIT);
 				gDepthDirty = TRUE;
 								

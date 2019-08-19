@@ -358,6 +358,7 @@ bool LLFloaterCompileQueue::processScript(LLHandle<LLFloaterCompileQueue> hfloat
     bool monocompile = floater->mMono;
     F32 fetch_timeout = gSavedSettings.getF32("QueueInventoryFetchTimeout");
 
+	LL_INFOS() << "ProcessScript: " << object->getID() << LL_ENDL;
 
     // Initial test to see if we can (or should) attempt to compile the script.
     LLInventoryItem *item = dynamic_cast<LLInventoryItem *>(inventory);

@@ -2240,6 +2240,7 @@ void LLLiveLSLEditor::finishLSLUpload(LLUUID itemId, LLUUID taskId, LLUUID newAs
 // virtual
 void LLLiveLSLEditor::saveIfNeeded(bool sync /*= true*/)
 {
+	LL_INFOS() << "LLLiveLSLEditor::saveIfNeeded" << LL_ENDL;
 	LLViewerObject* object = gObjectList.findObject(mObjectUUID);
 	if(!object)
 	{

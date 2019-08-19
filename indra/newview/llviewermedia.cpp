@@ -2948,6 +2948,7 @@ static LLTrace::BlockTimerStatHandle FTM_MEDIA_SET_SUBIMAGE("Set Subimage");
 void LLViewerMediaImpl::update()
 {
 	LL_RECORD_BLOCK_TIME(FTM_MEDIA_DO_UPDATE);
+	mMediaSource = getMediaPlugin();
 	if(mMediaSource == nullptr)
 	{
 		if(mPriority == LLPluginClassMedia::PRIORITY_UNLOADED)

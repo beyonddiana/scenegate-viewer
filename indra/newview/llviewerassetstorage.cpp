@@ -485,6 +485,7 @@ void LLViewerAssetStorage::assetRequestCoro(
 			// Set our destination file, and the completion callback.
 			LLTransferTargetParamsVFile tpvf;
 			tpvf.setAsset(uuid, atype);
+			LL_INFOS() << "Started downloading " << uuid << LL_ENDL;
 			tpvf.setCallback(downloadCompleteCallback, *req);
 
 			LL_DEBUGS("AssetStorage") << "Starting transfer for " << uuid << LL_ENDL;

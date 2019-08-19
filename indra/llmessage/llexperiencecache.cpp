@@ -541,6 +541,8 @@ void LLExperienceCache::fetchAssociatedExperience(const LLUUID& objectId, const 
         return;
     }
 
+	LL_INFOS() << "fetchAssociatedExperience I" << LL_ENDL;
+
     LLCoprocedureManager::instance().enqueueCoprocedure("ExpCache", "Fetch Associated",
         boost::bind(&LLExperienceCache::fetchAssociatedExperienceCoro, this, _1, objectId, itemId,  std::string(), fn));
 }
@@ -552,6 +554,8 @@ void LLExperienceCache::fetchAssociatedExperience(const LLUUID& objectId, const 
         LL_WARNS("ExperienceCache") << "Capability query method not set." << LL_ENDL;
         return;
     }
+
+	LL_INFOS() << "fetchAssociatedExperience II" << LL_ENDL;
 
     LLCoprocedureManager::instance().enqueueCoprocedure("ExpCache", "Fetch Associated",
         boost::bind(&LLExperienceCache::fetchAssociatedExperienceCoro, this, _1, objectId, itemId, url, fn));
