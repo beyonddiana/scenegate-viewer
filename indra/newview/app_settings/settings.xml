@@ -10116,7 +10116,7 @@
   <key>MaxAttachmentComplexity</key>
   <map>
     <key>Comment</key>
-    <string>Attachment's render weightÂ limit</string>
+    <string>Attachment's render weight limit</string>
     <key>Persist</key>
     <integer>1</integer>
     <key>Type</key>
@@ -11670,7 +11670,7 @@
       <key>Type</key>
       <string>String</string>
       <key>Value</key>
-      <string>alchemy</string>
+      <string>starlight_cui</string>
     </map>
     <key>SkinningSettingsFile</key>
     <map>
