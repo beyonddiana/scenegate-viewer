@@ -1,16 +1,20 @@
-Second Life Viewer
+![SceneGate Logo](https://bitbucket.org/imadevelopmentteam/scenegate-viewer/raw/f4646dca4b7b226fc0e41ea88b02069febe92927/indra/newview/icons/SceneGate_256.png)
+
+SceneGate Viewer
 ====================
 
-This project manages the source code for the
-[Second Life](https://www.secondlife.com) Viewer.
+This project contains the source code for the
+[SceneGate](https://bitbucket.org/account/user/imadevelopmentteam/projects/SG) Viewer.
 
-This source is available as open source; for details on licensing, see
-[the licensing page on the Second Life wiki](https://wiki.secondlife.com/wiki/Linden_Lab_Official:Second_Life_Viewer_Licensing_Program)
+To download the current version, visit
+[Downloads](https://bitbucket.org/imadevelopmentteam/scenegate-viewer/downloads/).
 
-For information on how to use and contribute to this, see
-[the open source portal on the wiki](https://wiki.secondlife.com/wiki/Open_Source_Portal).
+To report an issue, see
+[Issues](https://bitbucket.org/imadevelopmentteam/scenegate-viewer/wiki/Home).
 
-To download the current default version, visit
-[the download page](https://secondlife.com/support/downloads). For
-even newer versions try
-[the Alternate Viewers page](https://wiki.secondlife.com/wiki/Linden_Lab_Official:Alternate_Viewers)
+For information on how to use and contribute to the project, see
+[Wiki](https://bitbucket.org/imadevelopmentteam/scenegate-viewer/wiki/Home).
+
+Third Party License compliance information is available at
+[Licensing](https://wiki.secondlife.com/wiki/Linden_Lab_Official:Second_Life_Viewer_Licensing_Program).
+
