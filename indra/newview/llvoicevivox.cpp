@@ -2573,38 +2573,44 @@ void LLVivoxVoiceClient::sendPositionAndVolumeUpdate(void)
 		LLVector3d	earPosition;
 		LLVector3	earVelocity;
 		LLMatrix3	earRot;
-		
-		switch(mEarLocation)
+
+		if (mEarLocation != earLocSpeaker)
 		{
+			switch (mEarLocation)
+			{
 			case earLocCamera:
 			default:
 				earPosition = mCameraPosition;
 				earVelocity = mCameraVelocity;
 				earRot = mCameraRot;
-			break;
-			
+				break;
+
 			case earLocAvatar:
 				earPosition = mAvatarPosition;
 				earVelocity = mAvatarVelocity;
 				earRot = avatarRot;
-			break;
-			
+				break;
+
 			case earLocMixed:
 				earPosition = mAvatarPosition;
 				earVelocity = mAvatarVelocity;
 				earRot = mCameraRot;
-			break;
+				break;
+			}
+
+			l = earRot.getLeftRow();
+			u = earRot.getUpRow();
+			a = earRot.getFwdRow();
+			pos = earPosition;
+			vel = earVelocity;
+
+			//		LL_DEBUGS("Voice") << "Sending listener position " << earPosition << LL_ENDL;
+
+			oldSDKTransform(l, u, a, pos, vel);
+
+		// <FS:Ansariel> Equal voice volume; by Tigh MacFanatic
 		}
-
-		l = earRot.getLeftRow();
-		u = earRot.getUpRow();
-		a = earRot.getFwdRow();
-		pos = earPosition;
-		vel = earVelocity;
-
-//		LL_DEBUGS("Voice") << "Sending listener position " << earPosition << LL_ENDL;
-		
-		oldSDKTransform(l, u, a, pos, vel);
+		// </FS:Ansariel>
         
 		stream
 			<< "<Position>"

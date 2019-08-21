@@ -783,6 +783,8 @@ private:
 	{
 		earLocCamera = 0,		// ear at camera
 		earLocAvatar,			// ear at avatar
+		// <FS:Ansariel> Equal voice volume; by Tigh MacFanatic
+		earLocSpeaker,
 		earLocMixed				// ear at avatar location/camera direction
 	};
 	

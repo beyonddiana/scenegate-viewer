@@ -471,12 +471,14 @@
      length="1"
      follows="left|top"
      layout="topleft"
-	   left="46"
+	   left="25"
 	   top_delta="16"
+     top_pad="5"
      name="Listen from"
      width="112">
         Listen from:
     </text>
+      <!--
 	<icon
 		follows="left|top"
 		height="18"
@@ -486,27 +488,28 @@
 		mouse_opaque="false"
 		visible="true"
 		width="18"
-		left_pad="-4"
-		top_delta="-2"/>
+    left_pad="100" 
+    left="135"
+		top_delta="-5"/>
 	<icon
 		follows="left|top"
 		height="18"
 		image_name="Move_Walk_Off"
 		layout="topleft"
-		left_pad="170" 
 		name="avatar_icon"
 		mouse_opaque="false"
 		visible="true"
 		width="18"
-		top_delta="0" />
+    top_delta="0" />
+    -->
    <radio_group
      enabled_control="EnableVoiceChat"
      control_name="VoiceEarLocation"
      follows="left|top"
      layout="topleft"
-     left_delta="-168"
-     width="360"
-     height="20"
+     left_pad="-75" 
+     width="400"
+     height="19"
      top_delta="-4"
      name="ear_location">
     <radio_item
@@ -515,16 +518,26 @@
      follows="left|top"
      layout="topleft"
      name="0"
-     width="200"/>
+     left="40"
+     width="150"/>
     <radio_item
      height="19"
-     follows="left|top"
+     follows="left"
      label="Avatar position"
      layout="topleft"
      left_pad="-16"
      name="1"
-     top_delta ="0" 
-     width="200" />
+     top_delta ="0"
+     width="150" />
+     <radio_item
+     height="19"
+     follows="left|top"
+     label="Speaker position"
+     layout="topleft"
+     left_pad="-16"
+     name="2"
+     top_delta ="0"
+     width="150" />
    </radio_group>
   <check_box
    control_name="LipSyncEnabled"
@@ -532,7 +545,7 @@
    height="15"
    label="Move avatar lips when speaking"
    layout="topleft"
-   left="44"
+   left="25"
    name="enable_lip_sync"
    top_pad="8" 
    width="237"/>
@@ -543,7 +556,7 @@
   height="15"
   label="Toggle speak on/off when I press:"
   layout="topleft"
-  left="44"
+  left="25"
   name="push_to_talk_toggle_check"
   width="237"
   tool_tip="When in toggle mode, press and release the trigger key ONCE to switch your microphone on or off. When not in toggle mode, the microphone broadcasts your voice only while the trigger is being held down."
