@@ -9,10 +9,10 @@ This project contains the source code for the
 To download the current version, visit
 [Downloads](https://bitbucket.org/imadevelopmentteam/scenegate-viewer/downloads/).
 
-To report an issue, see
+To report an issue, visit
 [Issues](https://bitbucket.org/imadevelopmentteam/scenegate-viewer/wiki/Home).
 
-For information on how to use and contribute to the project, see
+For information on how to use and contribute to the project, visit
 [Wiki](https://bitbucket.org/imadevelopmentteam/scenegate-viewer/wiki/Home).
 
 Third Party License compliance information is available at
