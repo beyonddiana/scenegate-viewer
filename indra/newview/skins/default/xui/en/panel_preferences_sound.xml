@@ -532,7 +532,7 @@
      <radio_item
      height="19"
      follows="left|top"
-     label="Speaker position"
+     label="All positions"
      layout="topleft"
      left_pad="-16"
      name="2"
@@ -554,12 +554,12 @@
   enabled_control="EnableVoiceChat"
   control_name="PushToTalkToggle"
   height="15"
-  label="Toggle speak on/off when I press:"
+  label="Enable Toggle Mode"
   layout="topleft"
   left="25"
   name="push_to_talk_toggle_check"
   width="237"
-  tool_tip="When in toggle mode, press and release the trigger key ONCE to switch your microphone on or off. When not in toggle mode, the microphone broadcasts your voice only while the trigger is being held down."
+  tool_tip="When toggle mode is enabled, press and release the trigger key ONCE to switch your microphone on or off. When not in toggle mode, the microphone is in push to talk mode."
   top_pad="3"/>
   <line_editor
    follows="top|left"
