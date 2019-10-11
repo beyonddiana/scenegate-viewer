@@ -95,7 +95,7 @@
       <key>Type</key>
       <string>S32</string>
       <key>Value</key>
-      <integer>300</integer>
+      <integer>0</integer>
     </map>
     <key>AckCollectTime</key>
     <map>
@@ -174,6 +174,132 @@
       <key>Value</key>
       <integer>0</integer>
     </map>
+    <key>AlchemyDisableMinZoomDist</key>
+        <map>
+        <key>Comment</key>
+            <string>Disable lock on how far you may zoom in</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <integer>1</integer>
+        </map>
+    <key>AlchemyDisableSimCamConstraint</key>
+        <map>
+        <key>Comment</key>
+            <string>Disable the push the simulator applies when camera collides with objects</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <integer>1</integer>
+        </map>
+    <key>AlchemyFlyEnableAlways</key>
+        <map>
+        <key>Comment</key>
+            <string>Always allow fly even when parcel restricts it.</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <integer>1</integer>
+        </map>
+    <key>AlchemyLookAtHideSelf</key>
+        <map>
+        <key>Comment</key>
+            <string>Hide own Look At beacon when Look At render is enabled</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <integer>1</integer>
+        </map>
+    <key>AlchemyLookAtPrivate</key>
+        <map>
+        <key>Comment</key>
+            <string>Disable broadcast of own look at to other users.</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <integer>1</integer>
+        </map>
+    <key>AlchemyMoonwalk</key>
+        <map>
+        <key>Comment</key>
+            <string>Walk backwards when moving backwards</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <integer>1</integer>
+        </map>
+    <key>AlchemyNearbyChatOutput</key>
+        <map>
+        <key>Comment</key>
+            <string>Output display for nearby chat(0 toasts, 1, bubbles, 2 both)</string>
+        <key>Type</key>
+            <string>U32</string>
+        <key>Value</key>
+            <string>2</string>
+        </map>
+    <key>AlchemyNearbyDoubleClick</key>
+        <map>
+        <key>Comment</key>
+            <string>Determine action taken when double clicking on an avatar in nearby list IM(0), Profile(1), Zoom(2), or Teleport(3)</string>
+        <key>Type</key>
+            <string>U32</string>
+        <key>Value</key>
+            <integer>2</integer>
+        </map>
+    <key>AlchemyPlayTypingSound</key>
+        <map>
+        <key>Comment</key>
+            <string>Play typing sound</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <integer>0</integer>
+        </map>
+    <key>AlchemyPointAtDisable</key>
+        <map>
+        <key>Comment</key>
+            <string>Disable editing arm motion and beam if true</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <integer>1</integer>
+        </map>
+    <key>AlchemyRadarAlerts</key>
+        <map>
+        <key>Comment</key>
+            <string>Notify when someone enters or leaves the current region</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <boolean>1</boolean>
+        </map>
+    <key>AlchemyRainbowEffects</key>
+        <map>
+        <key>Comment</key>
+            <string>Makes agent effects rainbows!</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <integer>0</integer>
+        </map>
+    <key>AlchemyRealisticMouselook</key>
+        <map>
+        <key>Comment</key>
+            <string>Make the camera follow avatar body movements and animations while in mouselook</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <integer>1</integer>
+        </map>
+    <key>AlchemySettingsContaminated</key>
+        <map>
+        <key>Comment</key>
+            <string>Alternate batching path that is more correct and aggressive</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <boolean>1</boolean>
+        </map>
     <key>AllowMultipleViewers</key>
     <map>
       <key>Comment</key>
@@ -183,7 +309,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>0</integer>
+      <integer>1</integer>
     </map>
     <key>AllowTapTapHoldRun</key>
     <map>
@@ -392,7 +518,7 @@
       <key>Type</key>
       <string>F32</string>
       <key>Value</key>
-      <real>0.5</real>
+      <real>1.0</real>
     </map>
     <key>AudioLevelUI</key>
     <map>
@@ -414,7 +540,7 @@
       <key>Type</key>
       <string>F32</string>
       <key>Value</key>
-      <real>0.5</real>
+      <real>1</real>
     </map>
     <key>AudioLevelWind</key>
     <map>
@@ -425,7 +551,7 @@
       <key>Type</key>
       <string>F32</string>
       <key>Value</key>
-      <real>0.5</real>
+      <real>0.3</real>
     </map>
 	<key>AudioStreamingMedia</key>
     <map>
@@ -1459,7 +1585,7 @@
       <array>
         <real>-2.0</real>
         <real>0.0</real>
-        <real>-0.2</real>
+        <real>-0.4</real>
       </array>
     </map>
     <key>CameraOffsetShoulderView</key>
@@ -1489,7 +1615,7 @@
       <array>
         <real>2.0</real>
         <real>0.0</real>
-        <real>-0.4</real>
+        <real>-0.6</real>
       </array>
     </map>
     <key>CameraOffsetGroupView</key>
@@ -1516,7 +1642,7 @@
       <key>Type</key>
       <string>F32</string>
       <key>Value</key>
-      <real>1.2</real>
+      <real>1.3</real>
     </map>
     <key>CameraPosOnLogout</key>
     <map>
@@ -1858,6 +1984,15 @@
       <key>Value</key>
       <integer>0</integer>
     </map>
+    <key>CloseChatBarOnReturn</key>
+        <map>
+        <key>Comment</key>
+            <string>Close chat after hitting return</string>
+        <key>Type</key>
+            <string>Boolean</string>
+        <key>Value</key>
+            <boolean>0</boolean>
+        </map>
     <key>CmdLineChannel</key>
     <map>
       <key>Comment</key>
@@ -2177,7 +2312,7 @@
       <key>Type</key>
       <string>String</string>
       <key>Value</key>
-      <string></string>
+      <string>grid.metaversedepot.com:8002</string>
     </map>
     <key>CustomServer</key>
     <map>
@@ -3156,7 +3291,7 @@
       <key>Type</key>
       <string>U32</string>
       <key>Value</key>
-      <integer>10</integer>
+      <integer>0</integer>
     </map>
     <key>DestinationGuideURL</key>
     <map>
@@ -3178,7 +3313,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>0</integer>
+      <integer>1</integer>
     </map>
     <key>DisableCrashLogger</key>
     <map>
@@ -3805,7 +3940,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>0</integer>
+      <integer>1</integer>
     </map>
     <key>FirstRunThisInstall</key>
     <map>
@@ -5416,7 +5551,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>1</integer>
+      <integer>0</integer>
     </map>
     <key>LinkReplaceBatchSize</key>
     <map>
@@ -5614,7 +5749,7 @@
       <key>Type</key>
       <string>String</string>
       <key>Value</key>
-      <string>last</string>
+      <string>home</string>
     </map>
     <key>LoginPage</key>
     <map>
@@ -5669,7 +5804,7 @@
       <key>Type</key>
       <string>F32</string>
       <key>Value</key>
-      <real>128.0</real>
+      <real>256.0</real>
     </map>
     <key>MapServerURL</key>
     <map>
@@ -7302,7 +7437,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>0</integer>
+      <integer>1</integer>
     </map>
     <key>ParticipantListShowIcons</key>
     <map>
@@ -7434,7 +7569,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>1</integer>
+      <integer>0</integer>
     </map>
     <key>PlaySoundIncomingVoiceCall</key>
     <map>
@@ -7992,7 +8127,7 @@
       <key>Type</key>
       <string>String</string>
       <key>Value</key>
-      <string>MiddleMouse</string>
+      <string>`</string>
     </map>
     <key>PushToTalkToggle</key>
     <map>
@@ -8058,7 +8193,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>0</integer>
+      <integer>1</integer>
     </map>
     <key>QuitAfterSeconds</key>
     <map>
@@ -8380,7 +8515,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>0</integer>
+      <integer>1</integer>
     </map>
   <key>RenderAvatar</key>
     <map>
@@ -8402,7 +8537,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>1</integer>
+      <integer>0</integer>
     </map>
   <key>RenderComplexityColorMin</key>
     <map>
@@ -8505,7 +8640,7 @@
       <key>Type</key>
       <string>F32</string>
       <key>Value</key>
-      <real>1.0</real>
+      <real>0.75</real>
     </map>
     <key>RenderAvatarVP</key>
     <map>
@@ -9244,7 +9379,7 @@
     <key>Type</key>
     <string>Boolean</string>
     <key>Value</key>
-    <integer>1</integer>
+    <integer>0</integer>
   </map>
 
   <key>RenderDeferredBlurLight</key>
@@ -9543,7 +9678,7 @@
       <key>Type</key>
       <string>S32</string>
       <key>Value</key>
-      <integer>9</integer>
+      <integer>8</integer>
     </map>
     <key>RenderGlowStrength</key>
     <map>
@@ -9756,7 +9891,7 @@
       <key>Type</key>
       <string>S32</string>
       <key>Value</key>
-      <integer>4096</integer>
+      <integer>2048</integer>
     </map>
   <key>RenderMaxNodeSize</key>
   <map>
@@ -9844,7 +9979,7 @@
       <key>Type</key>
       <string>S32</string>
       <key>Value</key>
-      <integer>2</integer>
+      <integer>0</integer>
     </map>
     <key>RenderShadowDetail</key>
     <map>
@@ -9855,7 +9990,7 @@
       <key>Type</key>
       <string>S32</string>
       <key>Value</key>
-      <integer>2</integer>
+      <integer>0</integer>
     </map>
 
     <key>RenderReflectionRes</key>
@@ -10116,7 +10251,7 @@
   <key>MaxAttachmentComplexity</key>
   <map>
     <key>Comment</key>
-    <string>Attachment's render weight limit</string>
+    <string>Attachment's render weightÂ limit</string>
     <key>Persist</key>
     <integer>1</integer>
     <key>Type</key>
@@ -10292,7 +10427,7 @@
       <key>Type</key>
       <string>F32</string>
       <key>Value</key>
-      <real>1.0</real>
+      <real>4.0</real>
     </map>
     <key>RenderWater</key>
     <map>
@@ -11172,7 +11307,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>1</integer>
+      <integer>0</integer>
     </map>
     <key>NearbyListShowIcons</key>
     <map>
@@ -11615,7 +11750,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>0</integer>
+      <integer>1</integer>
     </map>
     <key>ShowTangentBasis</key>
     <map>
@@ -13339,7 +13474,7 @@
       <key>Type</key>
       <string>U32</string>
       <key>Value</key>
-      <integer>3</integer>
+      <integer>0</integer>
     </map>
     <key>UpdaterServiceCheckPeriod</key>
     <map>
@@ -13526,7 +13661,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>1</integer>
+      <integer>0</integer>
     </map>
     <key>WaterPresetName</key>
     <map>
@@ -14010,7 +14145,7 @@
       <key>Type</key>
       <string>S32</string>
       <key>Value</key>
-      <integer>0</integer>
+      <integer>2</integer>
     </map>
     <key>VoiceHost</key>
     <map>
@@ -14186,7 +14321,7 @@
       <key>Type</key>
       <string>U32</string>
       <key>Value</key>
-      <integer>64</integer>
+      <integer>48</integer>
     </map>
     <key>WatchdogEnabled</key>
     <map>
@@ -14263,7 +14398,7 @@
       <key>Type</key>
       <string>Boolean</string>
       <key>Value</key>
-      <integer>1</integer>
+      <integer>0</integer>
     </map>
     <key>FullScreen</key>
     <map>
@@ -15898,7 +16033,7 @@
     <key>Type</key>
     <string>U32</string>
     <key>Value</key>
-    <integer>0</integer>
+    <integer>2</integer>
   </map>
   <key>FMODStreamBufferSize</key>
   <map>
@@ -16032,7 +16167,7 @@
 		<key>Type</key>
 		<string>String</string>
 		<key>Value</key>
-		<string>extended</string>
+		<string>simplified</string>
 	</map>
 	</map>
 </llsd>
