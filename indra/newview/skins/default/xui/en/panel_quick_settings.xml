@@ -20,7 +20,7 @@
    initial_value="96"
    follows="left|top|right"
    layout="topleft"
-   max_val="512"
+   max_val="1024"
    min_val="64"
    left="93"
    right="-68"
