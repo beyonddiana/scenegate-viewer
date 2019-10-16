@@ -174,132 +174,6 @@
       <key>Value</key>
       <integer>0</integer>
     </map>
-    <key>AlchemyDisableMinZoomDist</key>
-        <map>
-        <key>Comment</key>
-            <string>Disable lock on how far you may zoom in</string>
-        <key>Type</key>
-            <string>Boolean</string>
-        <key>Value</key>
-            <integer>1</integer>
-        </map>
-    <key>AlchemyDisableSimCamConstraint</key>
-        <map>
-        <key>Comment</key>
-            <string>Disable the push the simulator applies when camera collides with objects</string>
-        <key>Type</key>
-            <string>Boolean</string>
-        <key>Value</key>
-            <integer>1</integer>
-        </map>
-    <key>AlchemyFlyEnableAlways</key>
-        <map>
-        <key>Comment</key>
-            <string>Always allow fly even when parcel restricts it.</string>
-        <key>Type</key>
-            <string>Boolean</string>
-        <key>Value</key>
-            <integer>1</integer>
-        </map>
-    <key>AlchemyLookAtHideSelf</key>
-        <map>
-        <key>Comment</key>
-            <string>Hide own Look At beacon when Look At render is enabled</string>
-        <key>Type</key>
-            <string>Boolean</string>
-        <key>Value</key>
-            <integer>1</integer>
-        </map>
-    <key>AlchemyLookAtPrivate</key>
-        <map>
-        <key>Comment</key>
-            <string>Disable broadcast of own look at to other users.</string>
-        <key>Type</key>
-            <string>Boolean</string>
-        <key>Value</key>
-            <integer>1</integer>
-        </map>
-    <key>AlchemyMoonwalk</key>
-        <map>
-        <key>Comment</key>
-            <string>Walk backwards when moving backwards</string>
-        <key>Type</key>
-            <string>Boolean</string>
-        <key>Value</key>
-            <integer>1</integer>
-        </map>
-    <key>AlchemyNearbyChatOutput</key>
-        <map>
-        <key>Comment</key>
-            <string>Output display for nearby chat(0 toasts, 1, bubbles, 2 both)</string>
-        <key>Type</key>
-            <string>U32</string>
-        <key>Value</key>
-            <string>2</string>
-        </map>
-    <key>AlchemyNearbyDoubleClick</key>
-        <map>
-        <key>Comment</key>
-            <string>Determine action taken when double clicking on an avatar in nearby list IM(0), Profile(1), Zoom(2), or Teleport(3)</string>
-        <key>Type</key>
-            <string>U32</string>
-        <key>Value</key>
-            <integer>2</integer>
-        </map>
-    <key>AlchemyPlayTypingSound</key>
-        <map>
-        <key>Comment</key>
-            <string>Play typing sound</string>
-        <key>Type</key>
-            <string>Boolean</string>
-        <key>Value</key>
-            <integer>0</integer>
-        </map>
-    <key>AlchemyPointAtDisable</key>
-        <map>
-        <key>Comment</key>
-            <string>Disable editing arm motion and beam if true</string>
-        <key>Type</key>
-            <string>Boolean</string>
-        <key>Value</key>
-            <integer>1</integer>
-        </map>
-    <key>AlchemyRadarAlerts</key>
-        <map>
-        <key>Comment</key>
-            <string>Notify when someone enters or leaves the current region</string>
-        <key>Type</key>
-            <string>Boolean</string>
-        <key>Value</key>
-            <boolean>1</boolean>
-        </map>
-    <key>AlchemyRainbowEffects</key>
-        <map>
-        <key>Comment</key>
-            <string>Makes agent effects rainbows!</string>
-        <key>Type</key>
-            <string>Boolean</string>
-        <key>Value</key>
-            <integer>0</integer>
-        </map>
-    <key>AlchemyRealisticMouselook</key>
-        <map>
-        <key>Comment</key>
-            <string>Make the camera follow avatar body movements and animations while in mouselook</string>
-        <key>Type</key>
-            <string>Boolean</string>
-        <key>Value</key>
-            <integer>1</integer>
-        </map>
-    <key>AlchemySettingsContaminated</key>
-        <map>
-        <key>Comment</key>
-            <string>Alternate batching path that is more correct and aggressive</string>
-        <key>Type</key>
-            <string>Boolean</string>
-        <key>Value</key>
-            <boolean>1</boolean>
-        </map>
     <key>AllowMultipleViewers</key>
     <map>
       <key>Comment</key>
@@ -4686,7 +4560,7 @@
     <key>HostID</key>
     <map>
       <key>Comment</key>
-      <string>Machine identifier for hosted Second Life instances</string>
+      <string>Machine identifier for hosted instances</string>
       <key>Persist</key>
       <integer>0</integer>
       <key>Type</key>
@@ -7196,7 +7070,7 @@
     <key>NumSessions</key>
     <map>
       <key>Comment</key>
-      <string>Number of successful logins to Second Life</string>
+      <string>Number of successful logins</string>
       <key>Persist</key>
       <integer>1</integer>
       <key>Type</key>
@@ -10251,7 +10125,7 @@
   <key>MaxAttachmentComplexity</key>
   <map>
     <key>Comment</key>
-    <string>Attachment's render weightÂ limit</string>
+    <string>Attachment's render weight�limit</string>
     <key>Persist</key>
     <integer>1</integer>
     <key>Type</key>
@@ -10828,7 +10702,7 @@
     <key>SecondLifeEnterprise</key>
     <map>
       <key>Comment</key>
-      <string>Enables Second Life Enterprise features</string>
+      <string>Enables Enterprise features</string>
       <key>Persist</key>
       <integer>1</integer>
       <key>Type</key>
@@ -13826,7 +13700,7 @@
       <key>Type</key>
       <string>String</string>
       <key>Value</key>
-      <string>English (United States),Second Life Glossary</string>
+      <string>English (United States), English (United States)</string>
     </map>
     <key>UseNewWalkRun</key>
     <map>
