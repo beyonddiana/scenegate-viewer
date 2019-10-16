@@ -65,8 +65,8 @@
           top="10"
           width="435"
           wrap="true">
-Second Life is brought to you by the Lindens, 
-with open source contributions from:
+SceneGate is brought to you by Infinite Metaverse Alliance(R) (IMA), 
+with prior open source contributions from:
       </text>
       <text_editor
        enabled="false" 
@@ -97,6 +97,7 @@ Dummy Name replaced at run time
        name="licenses_editor"
        top="5"
        width="435">
+Alchemy Development Group.
 3Dconnexion SDK Copyright (C) 1992-2009 3Dconnexion
 APR Copyright (C) 2011 The Apache Software Foundation
 Collada DOM Copyright 2006 Sony Computer Entertainment Inc.
@@ -118,19 +119,14 @@ SDL Copyright (C) 1997, 1998, 1999, 2000, 2001, 2002 Sam Lantinga
 SSLeay Copyright (C) 1995-1998 Eric Young (eay@cryptsoft.com)
 xmlrpc-epi Copyright (C) 2000 Epinions, Inc.
 zlib Copyright (C) 1995-2012 Jean-loup Gailly and Mark Adler.
-
-Second Life Viewer uses Havok (TM) Physics. (c)Copyright 1999-2010 Havok.com Inc. (and its Licensors). All Rights Reserved. See www.havok.com for details.
-
-This software contains source code provided by NVIDIA Corporation.
-
-All rights reserved.  See licenses.txt for details.
-
 Voice chat Audio coding: Polycom(R) Siren14(TM) (ITU-T Rec. G.722.1 Annex C)
+This software contains source code provided by NVIDIA Corporation and Second Life.
+All rights reserved.  See licenses.txt for details.
       </text_editor>
       </panel>
     <panel
       border="true" 
-      label="Credits" 
+      label="Project Details" 
       help_topic="about_alchemy_credits_tab"
       name="alchemy_credits_panel">
       <text
@@ -142,7 +138,7 @@ Voice chat Audio coding: Polycom(R) Siren14(TM) (ITU-T Rec. G.722.1 Annex C)
           top="10"
           width="435"
           wrap="true">
-SceneGate is brought to you by Infinite Metaverse Alliance. SceneGate is based on Alchemy Viewer by:
+SceneGate development is sponsored by Infinite Metaverse Alliance(R) (IMA).
       </text>
       <text_editor
        enabled="false" 
@@ -155,7 +151,7 @@ SceneGate is brought to you by Infinite Metaverse Alliance. SceneGate is based o
        top_pad="10"
        width="435"
        word_wrap="true">
-Sovereign Engineer, Cinder Roxley, Inusaito Kanya, Luminous Luminos, Electron Electricteeth
+This IMA Development Team project is a community effort based on the Alchemy Viewer codebase.  Aligned with the Helios project, development is focused on improvements in performance, usability, accessibility and interoperability with Open Simulator.
       </text_editor>
       <text
           follows="top|left"
@@ -179,7 +175,7 @@ with open source code from:
        top_pad="12"
        width="435"
        word_wrap="true">
-Siana Gearz, Shyotl Kuhr, Xenhat Liamano, NiranV Dean, Qarl Fizz, TheDarkest Fairey, Tofu Buzzard, Ansariel Hiller, Kitty Barnett, Ayamo Nozaki 
+IMA Development Team, Thales Nederland BV, Alchemy Development Group, Sovereign Engineer, Cinder Roxley, Inusaito Kanya, Luminous Luminos, Electron Electricteeth, Siana Gearz, Shyotl Kuhr, Xenhat Liamano, NiranV Dean, Qarl Fizz, TheDarkest Fairey, Tofu Buzzard, Ansariel Hiller, Kitty Barnett, Ayamo Nozaki 
       </text_editor>
       <text
           follows="top|left"
