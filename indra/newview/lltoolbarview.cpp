@@ -217,7 +217,7 @@ bool LLToolBarView::loadToolbars(const std::string& mode_prefix, bool force_defa
 	bool err = false;
 	
 	// Load the toolbars.xml file
-	std::string toolbar_file = gDirUtilp->getExpandedFilename(LL_PATH_PER_SL_ACCOUNT, gDirUtilp->getMenuMode(), "toolbars.xml"); //  in the middle
+	std::string toolbar_file = gDirUtilp->getExpandedFilename(LL_PATH_PER_SL_ACCOUNT, "toolbars.xml"); //  in the middle
 	if (force_default)
 	{
 		toolbar_file = gDirUtilp->getExpandedFilename(LL_PATH_APP_SETTINGS, gDirUtilp->getMenuMode(), "toolbars.xml");
