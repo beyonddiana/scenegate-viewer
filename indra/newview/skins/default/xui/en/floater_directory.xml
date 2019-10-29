@@ -137,7 +137,7 @@ Your search terms were missing a query string.
      bottom="-1" />
     <panel
      border="false"
-     label="AltaVista"
+     label="Web"
      filename="panel_search_web.xml"
      class="panel_search_web"
      name="panel_search_web"
