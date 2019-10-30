@@ -26,14 +26,14 @@
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="236"/>
-                            <menuItem title="Preferencesâ€¦" keyEquivalent="," id="129"/>
+                            <menuItem title="Preferences…" keyEquivalent="," id="129"/>
                             <menuItem isSeparatorItem="YES" id="143"/>
                             <menuItem title="Services" id="131">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Services" systemMenu="services" id="130"/>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="144"/>
-                            <menuItem title="Hide Second Life" keyEquivalent="h" id="134">
+                            <menuItem title="Hide SceneGate" keyEquivalent="h" id="134">
                                 <connections>
                                     <action selector="hide:" target="-1" id="369"/>
                                 </connections>
