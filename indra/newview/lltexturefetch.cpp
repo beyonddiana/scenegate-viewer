@@ -1339,7 +1339,7 @@ bool LLTextureFetchWorker::doWork(S32 param)
 		static LLCachedControl<bool> use_http(gSavedSettings, "ImagePipelineUseHTTP", true);
 
 // 		if (mHost.isInvalid()) get_url = false;
-		if ( (use_http && mCanUseHTTP && mUrl.empty() || LLGridManager::instance().isInSecondlife()) && mCanUseHTTP && mUrl.empty())//get http url.
+		if ( ((use_http && mCanUseHTTP && mUrl.empty()) || LLGridManager::instance().isInSecondlife()) && mCanUseHTTP && mUrl.empty())//get http url.
 		{
 			LLViewerRegion* region = NULL;
 			if (mHost.isInvalid())

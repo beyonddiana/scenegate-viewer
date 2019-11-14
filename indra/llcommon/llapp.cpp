@@ -49,8 +49,12 @@
 #if LL_WINDOWS
 #pragma warning (push)
 #pragma warning (disable : 4091) // compiler thinks might use uninitialized var, but no
-#endif
+
 #include "google_breakpad/exception_handler.h"
+#endif
+#if LL_LINUX
+#include "google_breakpad/client/linux/handler/exception_handler.h"
+#endif
 #if LL_WINDOWS
 #pragma warning (pop)
 #endif

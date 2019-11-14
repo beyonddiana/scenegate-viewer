@@ -2056,7 +2056,7 @@ void LLViewerWindow::initWorldUI()
 
 		if (gDirUtilp->getLanguage() == "en")
 		{
-			menu_mode = gSavedSettings.getControl("Mode")->getValue();
+			menu_mode = (gSavedSettings.getControl("Mode")->getValue()).asString();
 			mode_prefix = menu_mode + gDirUtilp->getDirDelimiter();
 
 			LL_INFOS("InitInfo") << "MENU MODE SELECTED: " << menu_mode << LL_ENDL;

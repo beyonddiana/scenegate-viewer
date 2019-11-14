@@ -184,7 +184,7 @@ void LLGridManager::initialize(const std::string& grid_file)
 					}
 					if (!main_grid_set)
 					{
-						MAIN_GRID_LOGIN_URI = grid[GRID_LOGIN_URI_VALUE];
+						MAIN_GRID_LOGIN_URI = (grid[GRID_LOGIN_URI_VALUE]).asString();
 						#define MAINGRID MAIN_GRID_LOGIN_URI
 						main_grid_set = true;
 					}
