@@ -14,6 +14,15 @@
      parameter="Touch" />
   </menu_item_call>
   <menu_item_call
+   enabled="false"
+   label="Open"
+   name="Open">
+    <menu_item_call.on_click
+     function="Object.Open" />
+    <menu_item_call.on_enable
+     function="Object.EnableOpen" />
+  </menu_item_call>
+  <menu_item_call
    label="Sit Here"
    name="Object Sit">
     <menu_item_call.on_click

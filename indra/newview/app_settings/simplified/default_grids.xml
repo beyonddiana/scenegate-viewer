@@ -26,7 +26,7 @@
         <key>password</key>
             <string>http://3rdrockgrid.com/</string>
         <key>platform</key>
-            <string>OpenSim</string>
+            <string>OpenSimulator</string>
         <key>register</key>
             <string>http://3rdrockgrid.com/</string>
         <key>uas</key>
@@ -60,7 +60,7 @@
         <key>password</key>
             <string>http://grid.avacon.org:8005/wifi/forgotpassword</string>
         <key>platform</key>
-            <string>OpenSim</string>
+            <string>OpenSimulator</string>
         <key>register</key>
             <string>http://grid.avacon.org:8005/wifi/user/account</string>
         <key>uas</key>
@@ -94,7 +94,7 @@
         <key>password</key>
             <string>http://digiworldz.com/</string>
         <key>platform</key>
-            <string>OpenSim</string>
+            <string>OpenSimulator</string>
         <key>register</key>
             <string>http://digiworldz.com/</string>
         <key>uas</key>
@@ -124,7 +124,7 @@
                 <string>http://3d.gimisa.ca:9000/</string>
             </array>
         <key>platform</key>
-            <string>OpenSim</string>
+            <string>OpenSimulator</string>
         <key>web_profile_url</key>
             <string>https://3d.gimisa.ca:9000/</string>
         </map>
@@ -152,7 +152,7 @@
                 <string>http://grid.kitely.com:8002/</string>
             </array>
         <key>platform</key>
-            <string>OpenSim</string>
+            <string>OpenSimulator</string>
         <key>uas</key>
             <string>http://grid.kitely.com:8002/</string>
         <key>web_profile_url</key>
@@ -174,7 +174,7 @@
                 <string>account</string>
             </array>
         <key>login_page</key>
-            <string>http://grid.metaversedepot.com:8002/</string>
+            <string>http://grid.metaversedepot.com:8002/wifi/welcome.html</string>
         <key>login_uri</key>
             <array>
                 <string>http://grid.metaversedepot.com:8002/</string>
@@ -182,7 +182,7 @@
         <key>password</key>
             <string>http://grid.metaversedepot.com:8002/wifi/forgotpassword</string>
         <key>platform</key>
-            <string>OpenSim</string>
+            <string>OpenSimulator</string>
         <key>register</key>
             <string>http://grid.metaversedepot.com:8002/</string>
         <key>web_profile_url</key>
@@ -214,7 +214,7 @@
         <key>password</key>
             <string>http://www.metro.land/password.php</string>
         <key>platform</key>
-            <string>OpenSim</string>
+            <string>OpenSimulator</string>
         <key>register</key>
             <string>http://www.metro.land/metro_rg.php</string>
         <key>uas</key>
@@ -246,7 +246,7 @@
                 <string>http://login.osgrid.org</string>
             </array>
         <key>platform</key>
-            <string>OpenSim</string>
+            <string>OpenSimulator</string>
         <key>register</key>
             <string>http://www.osgrid.org/</string>
         <key>uas</key>
@@ -278,7 +278,7 @@
         <key>password</key>
             <string>http://130.161.177.236:8002/wifi/forgotpassword?</string>
         <key>platform</key>
-            <string>OpenSim</string>
+            <string>OpenSimulator</string>
         <key>web_profile_url</key>
             <string>https://130.161.177.236:8002/</string>
         </map>
