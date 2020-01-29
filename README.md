@@ -24,7 +24,7 @@ For information on how to get and use the viewer or help with the project, visit
   
   
 
-For information on contribute to the wiki and open source code, visit these pages  
+For information on contributing to the wiki and contributing open source code, visit these pages  
   
 [Conduct Policy](https://bitbucket.org/imadevelopmentteam/scenegate-viewer/wiki/Policies%20and%20Procedures:/Our%20Conduct%20Policy)
 
