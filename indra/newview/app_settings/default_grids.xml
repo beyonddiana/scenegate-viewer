@@ -1,4 +1,5 @@
 <llsd>
+    <map>
     <key>grid.metaversedepot.com:8002</key>
         <map>
         <key>grid_login_id</key>
@@ -28,5 +29,7 @@
             <string>http://grid.metaversedepot.com:8002/</string>
         <key>web_profile_url</key>
             <string>https://grid.metaversedepot.com:8002/</string>
+        </map>
     </map>
 </llsd>
+
