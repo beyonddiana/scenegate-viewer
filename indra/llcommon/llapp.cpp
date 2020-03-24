@@ -34,6 +34,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <sys/sysctl.h>
+#include "google_breakpad/client/mac/handler/exception_handler.h"
 #endif
 
 #include "llcommon.h"

@@ -3342,7 +3342,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Unix Makefiles"</string>
+                  <string>Unix Makefiles</string>
                   <string>-DCMAKE_BUILD_TYPE:STRING=Release</string>
                   <string>-DWORD_SIZE:STRING=64</string>
                   <string>-DROOT_PROJECT_NAME:STRING=SceneGate</string>
@@ -3364,8 +3364,10 @@
                 </array>
                 <key>options</key>
                 <array>
-                  <string>-configuration Debug</string>
-                  <string>-project SceneGate.xcodeproj</string>
+                  <string>-configuration</string>
+                  <string>Debug</string>
+                  <string>-project</string>
+                  <string>SceneGate.xcodeproj</string>
                 </array>
               </map>
               <key>configure</key>
@@ -3377,7 +3379,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>'Xcode'</string>
+                  <string>Xcode</string>
                 </array>
               </map>
               <key>name</key>
@@ -3391,8 +3393,10 @@
                 <string>xcodebuild</string>
                 <key>options</key>
                 <array>
-                  <string>-configuration Debug</string>
-                  <string>-project SceneGate.xcodeproj</string>
+                  <string>-configuration</string>
+                  <string>Debug</string>
+                  <string>-project</string>
+                  <string>SceneGate.xcodeproj</string>
                 </array>
               </map>
               <key>configure</key>
@@ -3400,7 +3404,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>'Xcode'</string>
+                  <string>Xcode</string>
                 </array>
               </map>
               <key>name</key>
@@ -3418,8 +3422,10 @@
                 </array>
                 <key>options</key>
                 <array>
-                  <string>-configuration RelWithDebInfo</string>
-                  <string>-project SceneGate.xcodeproj</string>
+                  <string>-configuration</string>
+                  <string>RelWithDebInfo</string>
+                  <string>-project</string>
+                  <string>SceneGate.xcodeproj</string>
                 </array>
               </map>
               <key>configure</key>
@@ -3431,7 +3437,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>'Xcode'</string>
+                  <string>Xcode</string>
                 </array>
               </map>
               <key>default</key>
@@ -3447,8 +3453,10 @@
                 <string>xcodebuild</string>
                 <key>options</key>
                 <array>
-                  <string>-configuration RelWithDebInfo</string>
-                  <string>-project SceneGate.xcodeproj</string>
+                  <string>-configuration</string>
+                  <string>RelWithDebInfo</string>
+                  <string>-project</string>
+                  <string>SceneGate.xcodeproj</string>
                 </array>
               </map>
               <key>configure</key>
@@ -3456,7 +3464,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>'Xcode'</string>
+                  <string>Xcode</string>
                 </array>
               </map>
               <key>name</key>
@@ -3474,8 +3482,10 @@
                 </array>
                 <key>options</key>
                 <array>
-                  <string>-configuration Release</string>
-                  <string>-project SceneGate.xcodeproj</string>
+                  <string>-configuration</string>
+                  <string>Release</string>
+                  <string>-project</string>
+                  <string>SceneGate.xcodeproj</string>
                 </array>
               </map>
               <key>configure</key>
@@ -3487,7 +3497,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>'Xcode'</string>
+                  <string>Xcode</string>
                 </array>
               </map>
               <key>name</key>
@@ -3501,8 +3511,10 @@
                 <string>xcodebuild</string>
                 <key>options</key>
                 <array>
-                  <string>-configuration Release</string>
-                  <string>-project SceneGate.xcodeproj</string>
+                  <string>-configuration</string>
+                  <string>Release</string>
+                  <string>-project</string>
+                  <string>SceneGate.xcodeproj</string>
                 </array>
               </map>
               <key>configure</key>
@@ -3510,7 +3522,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>'Xcode'</string>
+                  <string>Xcode</string>
                 </array>
               </map>
               <key>name</key>
