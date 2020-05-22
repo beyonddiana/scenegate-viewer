@@ -3854,7 +3854,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15"</string>
+                  <string>Visual Studio 15 2017</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                 </array>
               </map>
@@ -3885,7 +3885,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15"</string>
+                  <string>Visual Studio 15 2017</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                   <string>-DUSE_KDU=FALSE</string>
                   <string>-DUSE_LL_STUBS:BOOL=ON</string>
@@ -3915,7 +3915,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15"</string>
+                  <string>Visual Studio 15 2017</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                 </array>
               </map>
@@ -3948,7 +3948,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15"</string>
+                  <string>Visual Studio 15 2017</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                   <string>-DINSTALL_PROPRIETARY=FALSE</string>
                   <string>-DUSE_KDU=FALSE</string>
@@ -3979,7 +3979,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15"</string>
+                  <string>Visual Studio 15 2017</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                 </array>
               </map>
@@ -4010,7 +4010,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15"</string>
+                  <string>Visual Studio 15 2017</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                   <string>-DINSTALL_PROPRIETARY=FALSE</string>
                   <string>-DUSE_KDU=FALSE</string>
@@ -4056,7 +4056,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15 Win64"</string>
+                  <string>Visual Studio 15 2017 Win64</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                   <string>-DWORD_SIZE:STRING=64</string>
                   <string>-DUSE_KDU:BOOL=OFF</string>
@@ -4087,7 +4087,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15 Win64"</string>
+                  <string>Visual Studio 15 2017 Win64</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                   <string>-DWORD_SIZE:STRING=64</string>
                 </array>
@@ -4119,7 +4119,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15 Win64"</string>
+                  <string>Visual Studio 15 2017 Win64</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                   <string>-DWORD_SIZE:STRING=64</string>
                   <string>-DUSE_KDU=FALSE</string>
@@ -4150,7 +4150,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15 Win64"</string>
+                  <string>Visual Studio 15 2017 Win64</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                   <string>-DWORD_SIZE:STRING=64</string>
                 </array>
@@ -4184,7 +4184,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15 Win64"</string>
+                  <string>Visual Studio 15 2017 Win64</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                   <string>-DWORD_SIZE:STRING=64</string>
                   <string>-DINSTALL_PROPRIETARY=FALSE</string>
@@ -4217,7 +4217,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15 Win64"</string>
+                  <string>Visual Studio 15 2017 Win64</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                   <string>-DWORD_SIZE:STRING=64</string>
                 </array>
@@ -4249,7 +4249,7 @@
                 <key>options</key>
                 <array>
                   <string>-G</string>
-                  <string>"Visual Studio 15 Win64"</string>
+                  <string>Visual Studio 15 2017 Win64</string>
                   <string>-DCMAKE_SYSTEM_VERSION="10.0.14393.0"</string>
                   <string>-DWORD_SIZE:STRING=64</string>
                   <string>-DINSTALL_PROPRIETARY=FALSE</string>
