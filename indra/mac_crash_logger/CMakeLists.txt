@@ -85,9 +85,8 @@ target_link_libraries(mac-crash-logger
 add_custom_command(
   TARGET mac-crash-logger POST_BUILD
   COMMAND ${CMAKE_COMMAND}
-  ARGS
     -E
-    copy_directory
+    copy_if_different
     ${CMAKE_CURRENT_SOURCE_DIR}/CrashReporter.nib
     ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_CFG_INTDIR}/mac-crash-logger.app/Contents/Resources/CrashReporter.nib
   )
